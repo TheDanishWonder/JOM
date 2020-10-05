@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   Text,
 } from "react-native";
-import { Button } from "react-native-paper";
 
 import activeDeck from "../../containers/active-deck";
 import players from "../../containers/players";
@@ -53,7 +52,7 @@ class GameDeck extends Component {
         },
         () => {
           this.changeLabel(card ? card(players.state.players) : "");
-          this.interimLabel();
+          //this.interimLabel();
           this.doTransition();
         }
       );
@@ -64,9 +63,9 @@ class GameDeck extends Component {
   };
 
   doTransition = () => {
-    Animated.sequence([
+    Animated.sequence([ 
       this.openMask(),
-      Animated.delay(570),
+      Animated.delay(),
       this.hideOverlay(),
       this.hideMask(),
       this.openOverlay(),
@@ -75,7 +74,7 @@ class GameDeck extends Component {
 
   openOverlay = () => {
     const { width, height, rad } = this.state.overlay;
-    const duration = 300;
+    const duration = 1000;
     return Animated.parallel([
       Animated.timing(this.state.color, {
         toValue: Math.floor(Math.random() * 256),
@@ -120,7 +119,7 @@ class GameDeck extends Component {
 
   openMask = () => {
     const { width, height, rad } = this.state.mask;
-    const duration = 300;
+    const duration = 1000;
     return Animated.parallel([
       Animated.timing(height, {
         toValue: 1000,
@@ -161,8 +160,9 @@ class GameDeck extends Component {
         text: getRandomMoraleBooster(),
         animating: true,
       });
-    }, 200);
+    }, 10);
   };
+ 
 
   changeLabel = (text) => {
     setTimeout(() => {
@@ -171,7 +171,7 @@ class GameDeck extends Component {
         animating: false,
         currentIndex: this.state.currentIndex + 1,
       });
-    }, 1000);
+    }, 1200);
   };
 
   handleBack = () => this.props.navigation.goBack();
@@ -185,7 +185,6 @@ class GameDeck extends Component {
       overlay,
       mask,
     } = this.state;
-    const btnText = isGameDone ? "New game" : "Next";
     const btnHandler = isGameDone ? this.handleBack : this.handleNextCard;
 
     let color = this.state.color.interpolate({
@@ -213,6 +212,7 @@ class GameDeck extends Component {
           mode="outlined"
           color="#fff"
           onPress={btnHandler}
+          hitSlop={{ top: 500, bottom: 700, left: 100, right: 100 }}
           style={[styles.btn]}
           type="contained"
           dark
@@ -224,7 +224,7 @@ class GameDeck extends Component {
           <View style={styles.textContainer}>
             {currentIndex === 0 ? null : (
               <Animated.Text
-                style={[styles.text, { color: animating ? color : "#fff" }]}
+                style={[styles.text, { color: animating ? color : "#f5c144" }]}
               >
                 {text}
               </Animated.Text>
@@ -242,10 +242,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    margin: 10,
+    margin: 25,
     position: "absolute",
     bottom: -450,
-    left: 15,
+    left: 0,
   },
   text: { color: "#f5c144", textAlign: "center", fontSize: 30 },
   btn: { margin: 10 },
