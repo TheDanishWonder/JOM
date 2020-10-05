@@ -2,7 +2,8 @@ import React from 'react'
 import { UIManager } from 'react-native'
 import { Provider } from 'unstated'
 import { Provider as PaperProvider } from 'react-native-paper'
-import { Font, AppLoading } from 'expo'
+import { AppLoading } from 'expo'
+import * as Font from 'expo-font'
 
 import Navigation from './src/Navigation'
 

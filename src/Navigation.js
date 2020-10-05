@@ -1,4 +1,5 @@
-import { createStackNavigator } from 'react-navigation'
+import { createAppContainer } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack'
 
 import AddPlayers from './screens/AddPlayers'
 import ChooseGame from './screens/ChooseGame'
@@ -9,8 +10,12 @@ const config = {
   initialRouteName: 'AddPlayers'
 }
 
-export default createStackNavigator({
+const Navigator = createStackNavigator({
   AddPlayers: AddPlayers,
   ChooseGame: ChooseGame,
   GameDeck: GameDeck
-}, config)
+}, config);
+
+const App = createAppContainer(Navigator);
+
+export default App;

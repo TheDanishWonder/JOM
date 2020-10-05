@@ -59,9 +59,9 @@ class AddPlayers extends Component {
 
         <View style={styles.container}>
           <View style={styles.headerContainer}>
-            <Image source={require('../../images/logo.png')} style={{ resizeMode: 'contain', height: 100 }} />
-            <Text style={{ fontFamily: 'GloriaHallelujah', textAlign: 'center', fontSize: 60, color: '#ffb677' }}>dronk</Text>
-            <Text style={{ fontSize: 12, color: '#444', marginTop: -25 }}>The social drinking game</Text>
+            <Image source={require('../../images/logo.png')} style={{ resizeMode: 'contain', height: 200 }} />
+            <Text style={{ fontFamily: 'GloriaHallelujah', textAlign: 'center', fontSize: 60, color: '#f5c144' }}>Smashed</Text>
+            <Text style={{ fontSize: 12, color: '#444', marginTop: -25 }}>The last drinking app you will ever</Text>
           </View>
 
           {
@@ -101,7 +101,7 @@ class AddPlayers extends Component {
 }
 
 const styles = StyleSheet.create({
-  headerContainer: { height: '30%', flex: 1, justifyContent: 'center', alignItems: 'center' },
+  headerContainer: { height: '30%', flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 70 },
   input: { marginHorizontal: 20, backgroundColor: 'transparent', marginTop: 30 },
   container: { flex: 1, paddingTop: 60, backgroundColor: '#fff' },
   chipContainer: {
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap'
   },
   chip: { margin: 2 },
-  deckBtn: { margin: 10 }
+  deckBtn: { margin: 30 }
 })
 
 export default AddPlayers

@@ -12,17 +12,21 @@
     "test": "node_modules/.bin/jest"
   },
   "dependencies": {
-    "expo": "30.0.2",
+    "@babel/plugin-transform-react-jsx-source": "^7.10.5",
+    "@react-native-community/masked-view": "^0.1.10",
+    "expo": "^39.0.3",
     "nanokit-container": "1.0.1",
-    "react": "16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
-    "react-native-paper": "2.0.1",
+    "react": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.0.tar.gz",
+    "react-native-gesture-handler": "^1.8.0",
+    "react-native-paper": "^2.0.1",
     "react-navigation": "4.0.0",
+    "react-navigation-stack": "^2.8.4",
     "unstated": "2.1.1"
   },
   "devDependencies": {
     "babel-eslint": "10.0.3",
-    "jest-expo": "34.0.1",
+    "jest-expo": "^39.0.0",
     "standard": "14.0.0"
   },
   "standard": {

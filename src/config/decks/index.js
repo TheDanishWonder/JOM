@@ -1,7 +1,7 @@
 
 import fitnessDeck from './fitness-freak'
 import hackersDeck from './hackers-delight'
-import gigglesDeck from './sh*ts-and-giggles'
+import gigglesDeck from './sh_ts-and-giggles'
 
 export default {
   'Fitness freak': fitnessDeck,
