@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "dronk",
+    "name": "smashed",
     "description": "The social drinking game",
-    "slug": "dronk",
+    "slug": "drinking-app",
     "privacy": "public",
     "platforms": [
       "ios",
@@ -10,11 +10,11 @@
     ],
     "version": "1.0.1",
     "orientation": "portrait",
-    "scheme": "xyz.tiaan.dronk",
+    "scheme": "drinkingapp",
     "primaryColor": "#ffb677",
     "icon": "src/images/logo.png",
     "splash": {
-      "image": "assets/splash.png",
+      "image": "assets/splash.gif",
       "resizeMode": "contain",
       "backgroundColor": "#fff"
     },
@@ -28,7 +28,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "xyz.tiaan.dronk",
+      "package": "drinkingapp",
       "versionCode": 1,
       "icon": "src/images/logo.png",
       "permissions": []
