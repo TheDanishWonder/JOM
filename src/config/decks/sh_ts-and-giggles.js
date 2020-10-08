@@ -2,7 +2,7 @@ import generalDeck from "./general-deck";
 import { getRandomPlayer, getRandomSip } from "./utils";
 
 export default {
-  icon: "face",
+  icon: "dice-6",
   description: "A game for the hell of it",
   cards: [
     ...generalDeck,

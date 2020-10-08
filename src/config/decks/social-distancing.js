@@ -2,7 +2,7 @@ import generalDeck from './general-deck'
 import { getRandomPlayer, getRandomSip } from './utils'
 
 export default {
-  icon: 'connect_without_contact',
+  icon: 'pipe-disconnected',
   description: 'Drink together, while being apart',
   cards: [
     ...generalDeck,

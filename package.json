@@ -13,13 +13,16 @@
   },
   "dependencies": {
     "@babel/plugin-transform-react-jsx-source": "^7.10.5",
+    "@expo/vector-icons": "^10.2.1",
     "@react-native-community/masked-view": "^0.1.10",
     "expo": "^39.0.3",
     "nanokit-container": "1.0.1",
     "react": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.0.tar.gz",
+    "react-native-divider": "^1.0.3",
     "react-native-gesture-handler": "^1.8.0",
-    "react-native-paper": "^2.0.1",
+    "react-native-paper": "^4.2.0",
+    "react-native-popup-dialog": "^0.18.3",
     "react-navigation": "4.0.0",
     "react-navigation-stack": "^2.8.4",
     "unstated": "2.1.1"

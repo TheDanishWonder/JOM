@@ -2,7 +2,7 @@ import generalDeck from './general-deck'
 import { getRandomPlayer, getRandomSip } from './utils'
 
 export default {
-  icon: 'fitness-center',
+  icon: 'pipe-disconnected',
   description: 'A game for athletic social drinkers',
   cards: [
     ...generalDeck,

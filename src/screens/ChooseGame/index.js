@@ -7,13 +7,23 @@ import {
   StyleSheet,
   ScrollView,
   Dimensions,
+  Text,
 } from "react-native";
-import { Appbar, List } from "react-native-paper";
+import { Appbar, List, Menu, IconButton, Colors } from "react-native-paper";
 import headerGif from "../../../assets/beerheader.gif";
 
 import decks from "../../config/decks/index";
 
 import activeDeck from "../../containers/active-deck";
+
+import Divider from "react-native-divider";
+
+// import howToPlay from "../../config/how-to-play";
+
+import Dialog, {
+  DialogContent,
+  SlideAnimation,
+} from "react-native-popup-dialog";
 
 const data = Object.entries(decks).map(([title, detail]) => {
   return {
@@ -23,7 +33,15 @@ const data = Object.entries(decks).map(([title, detail]) => {
   };
 });
 
-class ChooseGame extends Component {
+class ChooseGame extends React.Component {
+  state = {
+    visible: false,
+  };
+
+  _openMenu = () => this.setState({ visible: true });
+
+  _closeMenu = () => this.setState({ visible: false });
+
   handleDeckSelected = (deckTitle) => async () => {
     await activeDeck.set(decks[deckTitle]);
     this.props.navigation.navigate("GameDeck");
@@ -34,7 +52,10 @@ class ChooseGame extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: "#fff" }}>
-        <ImageBackground source={headerGif} style={[styles.fixed, styles.containter]}/>
+        <ImageBackground
+          source={headerGif}
+          style={[styles.fixed, styles.containter]}
+        />
 
         <StatusBar barStyle="light-content" />
         <Appbar.Header
@@ -43,24 +64,89 @@ class ChooseGame extends Component {
         >
           <Appbar.BackAction onPress={this.handleBack} />
           <Appbar.Content title="Choose a deck" />
+          <Menu
+            visible={this.state.visible}
+            onDismiss={this._closeMenu}
+            anchor={
+              <IconButton
+                icon="help-circle-outline"
+                color={Colors.white}
+                size={30}
+                onPress={this._openMenu}
+              />
+            }
+          >
+            <Dialog
+              width={0.9}
+              height={0.8}
+              containerStyle={{ marginTop: 100 }}
+              onHardwareBackPress={() => {
+                true;
+              }}
+              overlayOpacity={0.5}
+              dialogAnimation={
+                new SlideAnimation({
+                  slideFrom: "bottom",
+                })
+              }
+              visible={this.state.visible}
+              onTouchOutside={() => {
+                this.setState({ visible: false });
+              }}
+            >
+              <DialogContent>
+                <ScrollView>
+                  <View style={styles.dialogContainer}>
+                    <Text style={styles.dialogTitle}>Smashed</Text>
+                    <Text style={styles.dialogUnderTitle}>How to play</Text>
+                    <Divider
+                      color="#f5c144"
+                      color="#f5c144"
+                      orientation="center"
+                    ></Divider>
+                    <Text style={styles.dialogGenre}>General Game Rules</Text>
+                    <Text style={styles.dialogRules}>rules...</Text>
+                    <Divider
+                      color="#f5c144"
+                      color="#f5c144"
+                      orientation="center"
+                    ></Divider>
+                    <Text style={styles.dialogGenre}>Truth or Drink</Text>
+                    <Text style={styles.dialogRules}>rules...</Text>
+                    <Divider
+                      color="#f5c144"
+                      color="#f5c144"
+                      orientation="center"
+                    ></Divider>
+                    <Text style={styles.dialogGenre}>Would you Rather</Text>
+                    <Text style={styles.dialogRules}>rules...</Text>
+                    <Divider
+                      color="#f5c144"
+                      color="#f5c144"
+                      orientation="center"
+                    ></Divider>
+                  </View>
+                </ScrollView>
+              </DialogContent>
+            </Dialog>
+          </Menu>
         </Appbar.Header>
-        <ScrollView style={[styles.fixed, styles.scrollview]}>
-          
-            <FlatList
-              data={data}
-              nestedScrollEnabled={true}
-              keyExtractor={(item, index) => item.title}
-              renderItem={({ item }) => (
-                <List.Item
-                  left={(props) => <List.Icon {...props} icon={item.icon} />}
-                  onPress={this.handleDeckSelected(item.title)}
-                  title={item.title}
-                  description={item.description}
-                  style={styles.listItem}
-                />
-              )}
+        <FlatList
+          ListHeaderComponent={<></>}
+          data={data}
+          nestedScrollEnabled={true}
+          keyExtractor={(item, index) => item.title}
+          renderItem={({ item }) => (
+            <List.Item
+              left={(props) => <List.Icon {...props} icon={item.icon} />}
+              onPress={this.handleDeckSelected(item.title)}
+              title={item.title}
+              description={item.description}
+              style={styles.listItem}
             />
-        </ScrollView>
+          )}
+          ListFooterComponent={<></>}
+        />
       </View>
     );
   }
@@ -82,17 +168,52 @@ const styles = StyleSheet.create({
   containter: {
     width: Dimensions.get("window").width, //for full screen
     height: Dimensions.get("window").height, //for full screen
-    top: 50
+    top: 50,
   },
   fixed: {
     position: "absolute",
     top: 100,
     left: 0,
     right: 0,
-    bottom: 0
+    bottom: 0,
   },
- scrollview: {
-   backgroundColor: 'transparent',
-   paddingVertical: -70
- }
+  scrollview: {
+    backgroundColor: "transparent",
+    paddingVertical: -70,
+  },
+  dialogContainer: {
+    height: "110%",
+    width: "100%",
+    alignItems: "center",
+    paddingTop: 20,
+  },
+  dialogTitle: {
+    fontFamily: "GloriaHallelujah",
+    textAlign: "center",
+    fontSize: 70,
+    color: "#f5c144",
+    marginTop: -20,
+  },
+  dialogUnderTitle: {
+    fontFamily: "GloriaHallelujah",
+    textAlign: "center",
+    fontSize: 40,
+    color: "#f5c144",
+    marginTop: -40,
+  },
+  dialogGenre: {
+    fontFamily: "GloriaHallelujah",
+    textAlign: "center",
+    fontSize: 25,
+    color: "#f5c144",
+    padding: 5,
+  },
+  dialogRules: {
+    fontFamily: "GloriaHallelujah",
+    textAlign: "center",
+    fontSize: 20,
+    color: "#f5c144",
+    paddingBottom: 5,
+    marginTop: -5,
+  },
 });

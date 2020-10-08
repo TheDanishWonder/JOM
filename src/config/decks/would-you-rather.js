@@ -2,8 +2,8 @@ import generalDeck from './general-deck'
 import { getRandomPlayer, getRandomSip } from './utils'
 
 export default {
-  icon: 'pipe-disconnected',
-  description: 'Sisters before misters',
+  icon: 'drama-masks',
+  description: 'Good ol would you rather',
   cards: [
     ...generalDeck,
     (players) => {

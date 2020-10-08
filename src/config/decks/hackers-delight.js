@@ -2,7 +2,7 @@ import generalDeck from './general-deck'
 import { getRandomPlayer, getRandomSip } from './utils'
 
 export default {
-  icon: 'code',
+  icon: 'pipe-disconnected',
   description: 'For coders with too many deadlines',
   cards: [
     ...generalDeck,

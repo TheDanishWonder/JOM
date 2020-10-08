@@ -2,7 +2,7 @@ import generalDeck from './general-deck'
 import { getRandomPlayer, getRandomSip } from './utils'
 
 export default {
-  icon: 'pets',
+  icon: 'dog',
   description: 'Calling All Disney Heroes and Princesses',
   cards: [
     ...generalDeck,

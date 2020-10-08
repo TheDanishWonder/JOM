@@ -2,7 +2,7 @@
   "expo": {
     "name": "smashed",
     "description": "The social drinking game",
-    "slug": "drinking-app",
+    "slug": "smashed",
     "privacy": "public",
     "platforms": [
       "ios",
@@ -25,10 +25,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.junkyartroom.smashed",
+      "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "drinkingapp",
+      "package": "com.junkyartroom.smashed",
       "versionCode": 1,
       "icon": "src/images/logo.png",
       "permissions": []

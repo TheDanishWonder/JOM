@@ -79,37 +79,42 @@ class AddPlayers extends Component {
               textAlign: "center",
               fontSize: 60,
               color: "#f5c144",
+              marginTop: -10,
             }}
           >
             Smashed
           </Text>
-          <Text style={{ fontSize: 12, color: "#444", marginTop: -25 }}>
+          <Text style={{ fontSize: 12, color: "#444", marginTop: 10 }}>
             The last drinking app you will ever need
           </Text>
           <Button
             style={styles.deckBtn}
             onPress={this.handleChooseDeck}
             type="contained"
-            dark
           >
-            Choose deck
+            <Text style={{ color: "#f5c144", fontWeight: "bold" }}>
+              Choose deck
+            </Text>
           </Button>
         </View>
 
         <ImageBackground source={rotatingDrinks} style={styles.backgroundImage}>
           {visible && (
             <Fragment>
-              <TextInput
-                style={styles.input}
-                label="Add player"
-                placeholder="New player name"
-                value={current}
-                maxLength={40}
-                onChangeText={(current) => this.setState({ current })}
-                onSubmitEditing={this.handleAddPlayer}
-                blurOnSubmit={!current}
-                returnKeyType={"done"}
-              />
+              <View style={styles.parentInput}>
+                <TextInput
+                  style={styles.input}
+                  label="Add player"
+                  placeholder="New player name"
+                  placeholderTextColor="black"
+                  value={current}
+                  maxLength={40}
+                  onChangeText={(current) => this.setState({ current })}
+                  onSubmitEditing={this.handleAddPlayer}
+                  blurOnSubmit={!current}
+                  returnKeyType={"done"}
+                />
+              </View>
 
               <View style={styles.chipContainer}>
                 {players.map((current) => (
@@ -137,14 +142,31 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 150,
+    marginTop: 200,
+  },
+  parentInput: {
+    borderRadius: 60,
+    borderWidth: 2,
+    borderColor: "#f5c144",
+    backgroundColor: "white",
+    height: 55,
+    marginRight: 10,
+    marginLeft: 10,
   },
   input: {
     marginHorizontal: 20,
     backgroundColor: "transparent",
-    marginTop: 30,
+    height: 50,
+    opacity: 1,
+    marginTop: -5,
+    color: "white",
   },
-  container: { flex: 1, paddingTop: 60, backgroundColor: "#e0e0e0" },
+  container: {
+    flex: 1,
+    paddingTop: 60,
+    backgroundColor: "#e0e0e0",
+    marginTop: -65,
+  },
   chipContainer: {
     overflow: "scroll",
     flex: 1,
@@ -154,12 +176,18 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
   },
   chip: { margin: 2 },
-  deckBtn: { margin: 20, backgroundColor: "#f5c144", borderRadius: 30},
+  deckBtn: {
+    marginTop: 45,
+    backgroundColor: "white",
+    borderRadius: 30,
+    borderWidth: 2,
+    borderColor: "#f5c144",
+  },
   backgroundImage: {
     width: "100%",
     height: "65%",
     overflow: "hidden",
-    bottom: -171,
+    bottom: -183,
   },
 });
 

@@ -2,7 +2,7 @@ import generalDeck from './general-deck'
 import { getRandomPlayer, getRandomSip } from './utils'
 
 export default {
-  icon: 'drink',
+  icon: 'account-clock',
   description: 'Spill the tea or drink',
   cards: [
     ...generalDeck,
