@@ -3,7 +3,7 @@ import { getRandomPlayer, getRandomSip } from './utils'
 
 export default {
   icon: 'pipe-disconnected',
-  description: 'Sisters before misters',
+  description: 'Se her katrine',
   cards: [
     ...generalDeck,
     (players) => {

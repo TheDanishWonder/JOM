@@ -11,6 +11,7 @@ import SDDeck from './social-distancing'
 import MusicDeck from './music-lovers'
 import DisneyDeck from './disney-dream'
 import WyRDeck from './would-you-rather'
+import NhieDeck from './never-have-i-ever'
 
 
 export default {
@@ -26,4 +27,5 @@ export default {
   'Music Lovers': MusicDeck,
   'Disney Dream': DisneyDeck,
   'Would you Rather': WyRDeck,
+  'Never have i ever': NhieDeck
 }
