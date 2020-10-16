@@ -4,6 +4,7 @@
     "description": "The social drinking game",
     "slug": "smashed",
     "privacy": "public",
+    "sdkVersion": "39.0.0",
     "platforms": [
       "ios",
       "android"
@@ -14,7 +15,7 @@
     "primaryColor": "#ffb677",
     "icon": "src/images/logo.png",
     "splash": {
-      "image": "assets/splash.gif",
+      "image": "assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#fff"
     },
