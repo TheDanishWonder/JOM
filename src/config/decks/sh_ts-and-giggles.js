@@ -85,5 +85,115 @@ export default {
       const player = getRandomPlayer(players);
       return `${player} choose a person to slap your ass, if you refuse take ${getRandomSip()} sips.`;
     },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Pretend to have a orgasm and give away ${getRandomSip()} sips, if you refuse take ${getRandomSip()} sips.`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Show everyone how you normally dance, or finish your drink`;
+    },
+    () => `Everyone that are open to a threesome give ${getRandomSip()} sips out`,
+    () => `Everyone that sleeps naked take ${getRandomSip()} sips`,
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Choose two other players and kiss each other at the same time, if one player refuses take ${getRandomSip()} sips`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Choose a dance opponent. The rest of the party will vote, the loser takes ${getRandomSip()} sips`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Which player would you prefer to get into a intimate relationship with your younger sibling, give your new family member ${getRandomSip()} sips`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Post a video on instagram story with @SmashedDrinkingGame showing some love`;
+    },
+    () => `The player that has had sex with the oldest person give away ${getRandomSip()} sips`,
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Which parts of your body do you shave? take a sip for each body part`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Fill some of everyones drink in a cup and drink it, if you refuse finish your own drink`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Which player dresses the best, give them ${getRandomSip()} sips`;
+    },
+    () => `those with a bodycount over 5 take ${getRandomSip()} sips`,
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Which player do you think gives the most head, give them ${getRandomSip()} sips`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Bite the ear of the player to your left, if the player refuses take ${getRandomSip()} sips`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Post a picture of yourself in a sexy pose on Instagram with #SmashedDrinkingGame ${getRandomSip()} sips`;
+    },
+    () => `those who have measured therir penis take ${getRandomSip()} sips`,
+    () => `Everyone that has been blindfolded during sex take ${getRandomSip()} sips`,
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Name everyone at the party, take a sip for every wrong name you say`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Imitate an animal. The first person to guess it gives out ${getRandomSip()} sips`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Demonstrate your favorite sex position with another player take ${getRandomSip()} sips with them afterwards`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Check which player smells the best, the winner gives out ${getRandomSip()} sips`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Take a sip out of everyones drink, the player with the best drink gives out ${getRandomSip()} sips`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Get up and twerk. Take a sip for each player that is not impressed by your twerking-skills`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Who has the nicest booty, give them ${getRandomSip()} sips`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} If you were to direct a hardcore porn, which two players would you hire? pay them with ${getRandomSip()} sips each`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Which player would you like to see breakdance? if they accept, finish your drink`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Say "Where does the Titanic rest", first one to respond downs their drink with you`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Tell everyone about your worst sexual experience and give out ${getRandomSip()} sips`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Give one of the other players a lap dance`;
+    },
+    () => `Everyone who has hooked up with someone through a dating app take ${getRandomSip()} sips`,
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player} Take a body shot on the person to your right`;
+    },
+    () => `If you have ever fantasized about someone in the room take ${getRandomSip()} sips`,
+    () => `The person that can do the most push-ups in a row give out ${getRandomSip() + 4} sips`,
+
   ],
 };
