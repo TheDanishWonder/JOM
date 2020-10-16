@@ -31,7 +31,7 @@ class AddPlayers extends Component {
     const { players, current } = this.state;
 
     if (!current) {
-      return;
+      return null;
     }
 
     this.setState({
