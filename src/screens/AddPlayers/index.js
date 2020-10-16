@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import {
   View,
+  ScrollView,
   Text,
   StyleSheet,
   Image,
@@ -8,7 +9,7 @@ import {
   ImageBackground,
 } from "react-native";
 import { Chip, TextInput, Button } from "react-native-paper";
-import rotatingDrinks from "../../../assets/BeerLoading.gif";
+import rotatingDrinks from "../../../assets/beerLoad.gif";
 
 import playersContainer from "../../containers/players";
 
@@ -84,9 +85,45 @@ class AddPlayers extends Component {
           >
             Smashed
           </Text>
-          <Text style={{ fontSize: 12, color: "#444", marginTop: 10 }}>
+          <Text style={{ fontSize: 12, color: "#444", marginTop: -20 }}>
             The last drinking app you will ever need
           </Text>
+          <View style={styles.containerInput}>
+            {visible && (
+              <Fragment>
+                <View style={styles.parentInput}>
+                  <TextInput
+                    style={styles.input}
+                    label="Add player"
+                    placeholder="New player name"
+                    placeholderTextColor="black"
+                    value={current}
+                    maxLength={40}
+                    onChangeText={(current) => this.setState({ current })}
+                    onSubmitEditing={this.handleAddPlayer}
+                    blurOnSubmit={!current}
+                    returnKeyType={"done"}
+                  />
+                </View>
+
+                <View style={styles.chipContainer}>
+                  <ScrollView style={styles.chipContainerScroll}>
+                    {players.map((current) => (
+                      <Chip
+                        style={styles.chip}
+                        key={current}
+                        onPress={this.handleEditPlayer(current)}
+                        onClose={this.handleRemovePlayer(current)}
+                      >
+                        {current}
+                      </Chip>
+                    ))}
+                  </ScrollView>
+                </View>
+              </Fragment>
+            )}
+          </View>
+
           <Button
             style={styles.deckBtn}
             onPress={this.handleChooseDeck}
@@ -96,41 +133,11 @@ class AddPlayers extends Component {
               Choose deck
             </Text>
           </Button>
+          <ImageBackground
+            source={rotatingDrinks}
+            style={styles.backgroundImage}
+          ></ImageBackground>
         </View>
-
-        <ImageBackground source={rotatingDrinks} style={styles.backgroundImage}>
-          {visible && (
-            <Fragment>
-              <View style={styles.parentInput}>
-                <TextInput
-                  style={styles.input}
-                  label="Add player"
-                  placeholder="New player name"
-                  placeholderTextColor="black"
-                  value={current}
-                  maxLength={40}
-                  onChangeText={(current) => this.setState({ current })}
-                  onSubmitEditing={this.handleAddPlayer}
-                  blurOnSubmit={!current}
-                  returnKeyType={"done"}
-                />
-              </View>
-
-              <View style={styles.chipContainer}>
-                {players.map((current) => (
-                  <Chip
-                    style={{ margin: 2 }}
-                    key={current}
-                    onPress={this.handleEditPlayer(current)}
-                    onClose={this.handleRemovePlayer(current)}
-                  >
-                    {current}
-                  </Chip>
-                ))}
-              </View>
-            </Fragment>
-          )}
-        </ImageBackground>
       </View>
     );
   }
@@ -142,7 +149,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 200,
+    marginTop: 260,
   },
   parentInput: {
     borderRadius: 60,
@@ -150,8 +157,15 @@ const styles = StyleSheet.create({
     borderColor: "#f5c144",
     backgroundColor: "white",
     height: 55,
+    width: 350,
     marginRight: 10,
-    marginLeft: 10,
+    marginTop: 10,
+  },
+  containerInput: {
+    height: 160,
+    width: 350,
+    marginTop: 20,
+
   },
   input: {
     marginHorizontal: 20,
@@ -163,21 +177,33 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    paddingTop: 60,
     backgroundColor: "#e0e0e0",
-    marginTop: -65,
+    marginTop: -50
+  },
+  chipContainerScroll: {
+    borderRadius: 23,
+    borderWidth: 2,
+    borderColor: "transparent"
   },
   chipContainer: {
-    overflow: "scroll",
+    borderRadius: 60,
+    borderWidth: 2,
+    borderColor: "transparent",
+    backgroundColor: "transparent",
     flex: 1,
     alignItems: "flex-start",
     margin: 10,
     flexDirection: "row",
     flexWrap: "wrap",
+    justifyContent: "flex-start",
   },
-  chip: { margin: 2 },
+  chip: {
+    margin: 5,
+    borderRadius: 60,
+    borderWidth: 2,
+    borderColor: "#f5c144",
+  },
   deckBtn: {
-    marginTop: 45,
     backgroundColor: "white",
     borderRadius: 30,
     borderWidth: 2,
@@ -185,9 +211,8 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     width: "100%",
-    height: "65%",
+    height: "63.5%",
     overflow: "hidden",
-    bottom: -183,
   },
 });
 
