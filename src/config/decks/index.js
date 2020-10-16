@@ -15,17 +15,17 @@ import NhieDeck from './never-have-i-ever'
 
 
 export default {
-  'Fitness freak': FitnessDeck,
-  'Hackers delight': HackersDeck,
+  //'Fitness freak': FitnessDeck,
+  //'Hackers delight': HackersDeck,
   'Sh*ts and giggles': GigglesDeck,
-  'Movie Fanatics': MovieDeck,
-  'Sports Idiots': SportDeck,
-  'Girls Night': GirlsDeck,
-  'Boys Night': BoysDeck,
+  //'Movie Fanatics': MovieDeck,
+  //'Sports Idiots': SportDeck,
+  //'Girls Night': GirlsDeck,
+  //'Boys Night': BoysDeck,
   'Truth or Drink': ToDDeck,
-  'Social Distancing': SDDeck,
-  'Music Lovers': MusicDeck,
-  'Disney Dream': DisneyDeck,
+  //'Social Distancing': SDDeck,
+  //'Music Lovers': MusicDeck,
+  //'Disney Dream': DisneyDeck,
   'Would you Rather': WyRDeck,
   'Never have i ever': NhieDeck
 }

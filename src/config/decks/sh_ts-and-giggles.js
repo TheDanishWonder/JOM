@@ -3,7 +3,7 @@ import { getRandomPlayer, getRandomSip } from "./utils";
 
 export default {
   icon: "dice-6",
-  description: "A game for the hell of it",
+  description: "Good party starter",
   cards: [
     ...generalDeck,
     () => `If you are playing with an ex, take ${getRandomSip()} sips.`,

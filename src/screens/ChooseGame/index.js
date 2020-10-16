@@ -10,7 +10,7 @@ import {
   Text,
 } from "react-native";
 import { Appbar, List, Menu, IconButton, Colors } from "react-native-paper";
-import headerGif from "../../../assets/beerheader.gif";
+import headerGif from "../../../assets/selectDeckBackground.gif";
 
 import decks from "../../config/decks/index";
 
@@ -105,21 +105,21 @@ class ChooseGame extends React.Component {
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>General Game Rules</Text>
-                    <Text style={styles.dialogRules}>rules...</Text>
+                    <Text style={styles.dialogRules}>Follow the instructions on the cards, and remember to drink responsibly</Text>
                     <Divider
                       color="#f5c144"
                       color="#f5c144"
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>Truth or Drink</Text>
-                    <Text style={styles.dialogRules}>rules...</Text>
+                    <Text style={styles.dialogRules}>Tell the truth or drink the amount of sips the card tells.</Text>
                     <Divider
                       color="#f5c144"
                       color="#f5c144"
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>Would you Rather</Text>
-                    <Text style={styles.dialogRules}>rules...</Text>
+                    <Text style={styles.dialogRules}>Everybody plays at the same time, one player counts down from 3, when everybody have thought about the question, you either put your hand in the air for the first answer or put your hand down for the second.</Text>
                     <Divider
                       color="#f5c144"
                       color="#f5c144"
@@ -158,6 +158,8 @@ const styles = StyleSheet.create({
   listItem: {
     backgroundColor: "white",
     borderRadius: 60,
+    borderWidth: 2,
+    borderColor: "#f5c144", 
     opacity: 0.85,
     width: "95%",
     flex: 1,
@@ -213,7 +215,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
     color: "#f5c144",
-    paddingBottom: 5,
+    paddingBottom: -2,
     marginTop: -5,
   },
 });

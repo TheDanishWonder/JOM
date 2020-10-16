@@ -3,7 +3,7 @@ import { getRandomPlayer, getRandomSip } from './utils'
 
 export default {
   icon: 'pipe-disconnected',
-  description: 'Never have i ever',
+  description: 'Always gets all the secrets out',
   cards: [
     ...generalDeck,
     () => `Never have i ever been attracted to fuck boys/girls, losers take ${getRandomSip()} sips`,
@@ -127,5 +127,6 @@ export default {
     () => `Never have i ever wanted to be a sugar babe, losers take ${getRandomSip()} sips`,
     () => `Never have i ever been a gold digger, losers take ${getRandomSip()} sips`,
     () => `Never have i ever cheesy pick-up line, losers take ${getRandomSip()} sips`,
+    () => `Never have i ever gotten plastic surgery, losers take ${getRandomSip()} sips`,
   ]
 }
