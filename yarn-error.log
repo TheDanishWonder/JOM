@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\ndupo\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add expo-font@~8.3.0
+  C:\Program Files\nodejs\node.exe C:\Users\ndupo\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add 39.0.0
 
 PATH: 
-  E:\Documents - Data Drive\Git\mingw64\bin;E:\Documents - Data Drive\Git\usr\bin;C:\Users\ndupo\bin;C:\Users\ndupo\bin;E:\Documents - Data Drive\Git\mingw64\bin;E:\Documents - Data Drive\Git\usr\local\bin;E:\Documents - Data Drive\Git\usr\bin;E:\Documents - Data Drive\Git\usr\bin;E:\Documents - Data Drive\Git\mingw64\bin;E:\Documents - Data Drive\Git\usr\bin;C:\Users\ndupo\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk-12.0.1\bin;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;E:\Documents - Data Drive\Git\cmd;E:\Documents - Data Drive\Git\mingw64\bin;E:\Documents - Data Drive\Git\usr\bin;C:\Users\ndupo\AppData\Local\Microsoft\WindowsApps;C:\Users\ndupo\AppData\Local\Microsoft\WindowsApps;C:\Users\ndupo\AppData\Local\GitHubDesktop\bin;E:\Documents - Data Drive\Microsoft VS Code\bin;C:\Users\ndupo\AppData\Roaming\npm;C:\Program Files (x86)\EaseUS\Todo Backup\bin\x64;E:\Documents - Data Drive\Git\usr\bin\vendor_perl;E:\Documents - Data Drive\Git\usr\bin\core_perl
+  E:\Documents - Data Drive\Git\mingw64\bin;E:\Documents - Data Drive\Git\usr\bin;C:\Users\ndupo\bin;C:\Users\ndupo\bin;E:\Documents - Data Drive\Git\mingw64\bin;E:\Documents - Data Drive\Git\usr\local\bin;E:\Documents - Data Drive\Git\usr\bin;E:\Documents - Data Drive\Git\usr\bin;E:\Documents - Data Drive\Git\mingw64\bin;E:\Documents - Data Drive\Git\usr\bin;C:\Users\ndupo\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk-12.0.1\bin;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;E:\Documents - Data Drive\Git\cmd;E:\Documents - Data Drive\Git\mingw64\bin;E:\Documents - Data Drive\Git\usr\bin;C:\Users\ndupo\AppData\Local\Microsoft\WindowsApps;C:\Users\ndupo\AppData\Local\Microsoft\WindowsApps;C:\Users\ndupo\AppData\Local\GitHubDesktop\bin;E:\Documents - Data Drive\Microsoft VS Code\bin;C:\Users\ndupo\AppData\Roaming\npm;E:\Documents - Data Drive\Git\usr\bin\vendor_perl;E:\Documents - Data Drive\Git\usr\bin\core_perl
 
 Yarn version: 
   1.22.10
@@ -14,11 +14,21 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\ndupo\Dokumenter\Apps\Smashed\smashed_platform\node_modules\map-age-cleaner\dist'
+  Error: https://registry.yarnpkg.com/39.0.0: Not found
+      at Request.params.callback [as _callback] (C:\Users\ndupo\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
+      at Request.self.callback (C:\Users\ndupo\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (C:\Users\ndupo\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (C:\Users\ndupo\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (_stream_readable.js:1221:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
 
 npm manifest: 
   {
-    "name": "dronk",
+    "name": "smashed",
     "description": "The social drinking game",
     "main": "node_modules/expo/AppEntry.js",
     "private": true,
@@ -32,13 +42,16 @@ npm manifest:
     },
     "dependencies": {
       "@babel/plugin-transform-react-jsx-source": "^7.10.5",
+      "@expo/vector-icons": "^10.2.1",
       "@react-native-community/masked-view": "^0.1.10",
-      "expo": "^39.0.3",
+      "expo": "^39.0.0",
       "nanokit-container": "1.0.1",
       "react": "16.13.1",
       "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.0.tar.gz",
+      "react-native-divider": "^1.0.3",
       "react-native-gesture-handler": "^1.8.0",
-      "react-native-paper": "^2.0.1",
+      "react-native-paper": "^4.2.0",
+      "react-native-popup-dialog": "^0.18.3",
       "react-navigation": "4.0.0",
       "react-navigation-stack": "^2.8.4",
       "unstated": "2.1.1"
