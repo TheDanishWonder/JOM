@@ -68,34 +68,36 @@ class GameDeck extends Component {
 
     return (
       <Animated.View style={styles.container}>
-        <ImageBackground
-          source={require("../../../assets/exampleBoard.gif")}
-          style={styles.imageBackground}
-          resizeMode="cover"
-        >
-          <TouchableOpacity
-            mode="outlined"
-            color="#fff"
-            onPress={btnHandler}
-            hitSlop={{ top: 500, bottom: 700, left: 100, right: 100 }}
-            style={[styles.btn]}
-            type="contained"
-            dark
+        <View style={styles.gameBoard}>
+          <ImageBackground
+            source={require("../../../assets/exampleBoard.gif")}
+            style={styles.imageBackground}
+            resizeMode="cover"
           >
             <View style={styles.textContainer}>
-              {currentIndex === 0 ? null : (
-                <Animated.Text
-                  style={[
-                    styles.text,
-                    { color: animating ? color : "#f5c144" },
-                  ]}
-                >
-                  {text}
-                </Animated.Text>
-              )}
+              <TouchableOpacity
+                mode="outlined"
+                color="#fff"
+                onPress={btnHandler}
+                hitSlop={{ top: 500, bottom: 700, left: 100, right: 100 }}
+                style={[styles.btn]}
+                type="contained"
+                dark
+              >
+                {currentIndex === 0 ? null : (
+                  <Animated.Text
+                    style={[
+                      styles.text,
+                      { color: animating ? color : "#f5c144" },
+                    ]}
+                  >
+                    {text}
+                  </Animated.Text>
+                )}
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
-        </ImageBackground>
+          </ImageBackground>
+        </View>
       </Animated.View>
     );
   }
@@ -109,8 +111,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.6)",
     alignItems: "center",
     justifyContent: "center",
-    bottom: -65,
-    right: -200,
     borderRadius: 60,
     borderWidth: 2,
     borderColor: "#f5c144",
@@ -123,8 +123,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     margin: 10,
     marginLeft: 15,
-    flex: 1, 
-    flexWrap: 'wrap'
+    flex: 1,
+    flexWrap: "wrap",
   },
   btn: {
     margin: 10,
@@ -133,9 +133,15 @@ const styles = StyleSheet.create({
     transform: [{ rotate: "90deg" }],
     width: Dimensions.get("window").height, //for full screen
     height: Dimensions.get("window").width, //for full screen
-    bottom: -218.5,
-    left: -218.5
-  }
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  gameBoard: {
+    flex:1,
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center'
+  },
 });
 
 export default GameDeck;
