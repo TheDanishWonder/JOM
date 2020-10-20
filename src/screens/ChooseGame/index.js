@@ -10,13 +10,12 @@ import {
   Text,
 } from "react-native";
 import { Appbar, List, Menu, IconButton, Colors } from "react-native-paper";
-import headerGif from "../../../assets/selectDeckBackground.gif";
-
+import headerGif from "../../../assets/beerLoad.gif";
 import decks from "../../config/decks/index";
-
 import activeDeck from "../../containers/active-deck";
 
 import Divider from "react-native-divider";
+import { LinearGradient } from "expo-linear-gradient";
 
 // import howToPlay from "../../config/how-to-play";
 
@@ -51,16 +50,39 @@ class ChooseGame extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: "#fff" }}>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: "#fff",
+        }}
+      >
+                <LinearGradient
+          // Background Linear Gradient
+          colors={["#f5c144", "#e0e0e0"]}
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            top: 0,
+            height: Dimensions.get("window").height, //for full screen
+          }}
+          start={{ x:-1, y: 0 }}
+          end={{ x: -1.1, y: 0.57 }}
+        />
         <ImageBackground
           source={headerGif}
-          style={[styles.fixed, styles.containter]}
+          style={[styles.fixed, styles.container]}
         />
 
         <StatusBar barStyle="light-content" />
         <Appbar.Header
           dark
-          style={{ backgroundColor: "#f5c144", marginTop: 2 }}
+          style={{
+            backgroundColor:"#f5c144",
+            marginTop: 2,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
           <Appbar.BackAction onPress={this.handleBack} />
           <Appbar.Content title="Choose a deck" />
@@ -95,34 +117,57 @@ class ChooseGame extends React.Component {
               }}
             >
               <DialogContent>
+                <LinearGradient
+                  // Background Linear Gradient
+                  colors={["#f5c144", "transparent"]}
+                  style={{
+                    position: "absolute",
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    height: Dimensions.get("window").height, //for full screen
+                  }}
+                  start={{ x: -1, y: 0 }}
+                  end={{ x: -1.1, y: 0.65 }}
+                />
                 <ScrollView>
                   <View style={styles.dialogContainer}>
                     <Text style={styles.dialogTitle}>Smashed</Text>
                     <Text style={styles.dialogUnderTitle}>How to play</Text>
                     <Divider
-                      color="#f5c144"
-                      color="#f5c144"
+                      color={"#f5c144"}
+                      color={"#f5c144"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>General Game Rules</Text>
-                    <Text style={styles.dialogRules}>Follow the instructions on the cards, and remember to drink responsibly</Text>
+                    <Text style={styles.dialogRules}>
+                      Follow the instructions on the cards, and remember to
+                      drink responsibly
+                    </Text>
                     <Divider
-                      color="#f5c144"
-                      color="#f5c144"
+                      color={"#f5c144"}
+                      color={"#f5c144"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>Truth or Drink</Text>
-                    <Text style={styles.dialogRules}>Tell the truth or drink the amount of sips the card tells.</Text>
+                    <Text style={styles.dialogRules}>
+                      Tell the truth or drink the amount of sips the card tells.
+                    </Text>
                     <Divider
-                      color="#f5c144"
-                      color="#f5c144"
+                      color={"#f5c144"}
+                      color={"#f5c144"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>Would you Rather</Text>
-                    <Text style={styles.dialogRules}>Everybody plays at the same time, one player counts down from 3, when everybody have thought about the question, you either put your hand in the air for the first answer or put your hand down for the second.</Text>
+                    <Text style={styles.dialogRules}>
+                      Everybody plays at the same time, one player counts down
+                      from 3, when everybody have thought about the question,
+                      you either put your hand in the air for the first answer
+                      or put your hand down for the second.
+                    </Text>
                     <Divider
-                      color="#f5c144"
-                      color="#f5c144"
+                      color={"#f5c144"}
+                      color={"#f5c144"}
                       orientation="center"
                     ></Divider>
                   </View>
@@ -154,12 +199,25 @@ class ChooseGame extends React.Component {
 
 export default ChooseGame;
 
+let randomRGB = () => {
+  let red = Math.floor(Math.random() * 255);
+  let green = Math.floor(Math.random() * 255);
+  let blue = Math.floor(Math.random() * 255);
+  let color = "'"+"rgba("+red+","+green+","+blue+","+"1.0"+")"+"'";
+  
+  return color;
+}
+
+const color = () => {
+  return randomRGB()
+}
+
 const styles = StyleSheet.create({
   listItem: {
-    backgroundColor: "white",
+    backgroundColor: "rgba(245,245,245,0.5)",
     borderRadius: 60,
     borderWidth: 2,
-    borderColor: "#f5c144", 
+    borderColor: "#f5c144",
     opacity: 0.85,
     width: "95%",
     flex: 1,
@@ -167,17 +225,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     margin: 10,
   },
-  containter: {
+  container: {
     width: Dimensions.get("window").width, //for full screen
-    height: Dimensions.get("window").height, //for full screen
-    top: 50,
+    height: 200,
+    alignItems: "center",
+    justifyContent: "center",
   },
   fixed: {
     position: "absolute",
-    top: 100,
-    left: 0,
-    right: 0,
-    bottom: 0,
+    bottom: 0
   },
   scrollview: {
     backgroundColor: "transparent",
@@ -195,6 +251,9 @@ const styles = StyleSheet.create({
     fontSize: 70,
     color: "#f5c144",
     marginTop: -20,
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: 1, height: -1 },
+    textShadowRadius: 4,
   },
   dialogUnderTitle: {
     fontFamily: "GloriaHallelujah",
@@ -202,6 +261,9 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: "#f5c144",
     marginTop: -40,
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: 1, height: -1 },
+    textShadowRadius: 4,
   },
   dialogGenre: {
     fontFamily: "GloriaHallelujah",
@@ -209,6 +271,9 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: "#f5c144",
     padding: 5,
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: 1, height: -1 },
+    textShadowRadius: 4,
   },
   dialogRules: {
     fontFamily: "GloriaHallelujah",
@@ -217,5 +282,8 @@ const styles = StyleSheet.create({
     color: "#f5c144",
     paddingBottom: -2,
     marginTop: -5,
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: 1, height: -1 },
+    textShadowRadius: 4,
   },
 });

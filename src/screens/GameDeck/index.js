@@ -12,6 +12,7 @@ import {
 import activeDeck from "../../containers/active-deck";
 import players from "../../containers/players";
 import background from "../../../assets/exampleBoard.gif";
+import { LinearGradient } from "expo-linear-gradient";
 
 class GameDeck extends Component {
   state = {
@@ -57,7 +58,7 @@ class GameDeck extends Component {
         animating: false,
         currentIndex: this.state.currentIndex + 1,
       });
-    }, 50);
+    }, );
   };
 
   handleBack = () => this.props.navigation.goBack();
@@ -69,10 +70,12 @@ class GameDeck extends Component {
     return (
       <Animated.View style={styles.container}>
         <View style={styles.gameBoard}>
-          <ImageBackground
-            source={require("../../../assets/exampleBoard.gif")}
+          <LinearGradient
+            // Background Linear Gradient
+            colors={[color(), "#e0e0e0"]}
             style={styles.imageBackground}
-            resizeMode="cover"
+            start={{ x: -1, y: 0 }}
+            end={{ x: -1, y: 1.3 }}
           >
             <View style={styles.textContainer}>
               <TouchableOpacity
@@ -88,7 +91,7 @@ class GameDeck extends Component {
                   <Animated.Text
                     style={[
                       styles.text,
-                      { color: animating ? color : "#f5c144" },
+                      { color: animating ? color : color() },
                     ]}
                   >
                     {text}
@@ -96,11 +99,24 @@ class GameDeck extends Component {
                 )}
               </TouchableOpacity>
             </View>
-          </ImageBackground>
+          </LinearGradient>
         </View>
       </Animated.View>
     );
   }
+}
+
+let randomRGB = () => {
+  let red = Math.floor(Math.random() * 255);
+  let green = Math.floor(Math.random() * 255);
+  let blue = Math.floor(Math.random() * 255);
+  let color = "'"+"rgba("+red+","+green+","+blue+","+"1.0"+")"+"'";
+  
+  return color;
+}
+
+const color = () => {
+  return randomRGB()
 }
 
 const styles = StyleSheet.create({
@@ -113,7 +129,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 60,
     borderWidth: 2,
-    borderColor: "#f5c144",
+    borderColor: color(),
   },
   text: {
     fontFamily: "GloriaHallelujah",
@@ -125,6 +141,9 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     flex: 1,
     flexWrap: "wrap",
+    textShadowColor: "rgba(0,0,0,1)",
+    textShadowOffset: { width: 1, height: -1 },
+    textShadowRadius: 4,
   },
   btn: {
     margin: 10,
@@ -133,14 +152,14 @@ const styles = StyleSheet.create({
     transform: [{ rotate: "90deg" }],
     width: Dimensions.get("window").height, //for full screen
     height: Dimensions.get("window").width, //for full screen
-    alignItems:'center',
-    justifyContent:'center'
+    alignItems: "center",
+    justifyContent: "center",
   },
   gameBoard: {
-    flex:1,
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'center'
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
