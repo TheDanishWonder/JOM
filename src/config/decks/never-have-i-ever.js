@@ -12,17 +12,8 @@ export default {
     () => `Never have i ever been hooked up in a club/bars bathroom, losers take ${getLowSip()} sips`,
     () => `Never have i ever given somebody else a STD, losers take ${getLowSip()} sips`,
     () => `Never have i ever cockblocked on purpose, losers take ${getLowSip()} sips`,
-    () => `Everybody drinks ${getLowSip()} sips if your dad name is William`,
-    () => `Everybody drinks ${getLowSip()} sips if your dad name is James`,
-    () => `Everybody drinks ${getLowSip()} sips if your dad name is John`,
-    () => `Everybody drinks ${getLowSip()} sips if your dad name is Robert`,
-    () => `Everybody drinks ${getLowSip()} sips if your dad name is Michael`,
     () => `Never have i ever walked the walk of shame, losers take ${getLowSip()} sips`,
     () => `Never have i ever , losers take ${getLowSip()} sips`,
-    (players) => {
-        const player = getRandomPlayer(players)
-        return `${player} every time ${player} drink you cheer them on and vise versa, for the next ${getLowSip()} rounds.`
-      },
     () => `Everyone that is getting laid tonight take ${getLowSip()} sips.`,
     () => `Never have i ever dumped a person cause of your body count, losers take ${getLowSip()} sips`,
     () => `Never have i ever driven past my destination because i was too drunk or asleep, losers take ${getLowSip()} sips`,

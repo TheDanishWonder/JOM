@@ -308,10 +308,13 @@ export default {
       const player = getRandomPlayer(players);
       return `${player}, give out as many sips as there are single people around the table`;
     },
+    // 76
     (players) => {
       const player = getRandomPlayer(players);
       return `${player}, mine a scene from a movie, first person to guess the movie gives out ${getRandomSip()} sips`;
     },
+
+
 
     // All players cards
     () => `If you are playing with an ex, take ${getRandomSip()} sips.`,
@@ -336,7 +339,7 @@ export default {
     () => `If your name contains one of these letters "${getRandomString(1)}-${getRandomString(1)}-${getRandomString(1)}-${getRandomString(1)}-${getRandomString(1)}", take ${getRandomSip()} sips.`,
     () => `If you have shoes on, take ${getRandomSip()} sips.`,
     () => `If you ever got pulled over by the police, take ${getRandomSip()} sips per time you got pulled over, chug saves.`,
-    () => `last player that has touch their drink, take ${getRandomSip()} sips. (I knew you were thirsty ;) )`,
+    () => `last player that has touch their drink, take ${getRandomSip()} sips. (Everyone else drinks too since your drink is already in your hand CHEERS!) )`,
     () => `If you own a dog, give ${getRandomSip()} sips, if you own a cat, take ${getRandomSip()} sips out.`,
     () => `If you got red on take ${getRandomSip()} sips.`,
     () => `If you have ever been on TV or the radio, take ${getRandomSip()} sips.`,
@@ -368,6 +371,8 @@ export default {
     () => `Take ${getRandomSip()} sips, if you ever heard a reltive doing the nasty`,
     () => `First person to pull out a condom, give out ${getRandomSip()} sips ( ${safeSexJoke} )`,
     () => `If you were drunk yesterday, take ${getRandomSip()} sips`,
+
+    // 129
   ],
 };
 
