@@ -8,6 +8,7 @@ import {
   ScrollView,
   Dimensions,
   Text,
+  LayoutAnimation,
 } from "react-native";
 import { Appbar, List, Menu, IconButton, Colors } from "react-native-paper";
 import headerGif from "../../../assets/beerLoad.gif";
@@ -35,8 +36,24 @@ const data = Object.entries(decks).map(([title, detail]) => {
 class ChooseGame extends React.Component {
   state = {
     visible: false,
+    items: false,
   };
 
+  componentDidMount() {
+    var CustomAnimation = {
+      duration: 700,
+      create: {
+        type: LayoutAnimation.Types.easeIn,
+        property: LayoutAnimation.Properties.opacity,
+        springDamping: 3.4,
+      },
+    };
+
+    setTimeout(() => {
+      LayoutAnimation.configureNext(CustomAnimation);
+      this.setState({ items: true });
+    }, 500);
+  }
   _openMenu = () => this.setState({ visible: true });
 
   _closeMenu = () => this.setState({ visible: false });
@@ -49,6 +66,7 @@ class ChooseGame extends React.Component {
   handleBack = () => this.props.navigation.goBack();
 
   render() {
+    const { items } = this.state;
     return (
       <View
         style={{
@@ -56,7 +74,7 @@ class ChooseGame extends React.Component {
           backgroundColor: "#fff",
         }}
       >
-                <LinearGradient
+        <LinearGradient
           // Background Linear Gradient
           colors={["#f5c144", "#e0e0e0"]}
           style={{
@@ -66,7 +84,7 @@ class ChooseGame extends React.Component {
             top: 0,
             height: Dimensions.get("window").height, //for full screen
           }}
-          start={{ x:-1, y: 0 }}
+          start={{ x: -1, y: 0 }}
           end={{ x: -1.1, y: 0.57 }}
         />
         <ImageBackground
@@ -78,7 +96,7 @@ class ChooseGame extends React.Component {
         <Appbar.Header
           dark
           style={{
-            backgroundColor:"#f5c144",
+            backgroundColor: "#f5c144",
             marginTop: 2,
             alignItems: "center",
             justifyContent: "center",
@@ -170,28 +188,76 @@ class ChooseGame extends React.Component {
                       color={"#f5c144"}
                       orientation="center"
                     ></Divider>
+
+                    <Text style={styles.dialogUnderTitle, styles.credit}>Credit</Text>
+                    <Divider
+                      color={"#f5c144"}
+                      color={"#f5c144"}
+                      orientation="center"
+                    ></Divider>
+                    <Text style={styles.dialogGenre}>Gif Design</Text>
+                    <Divider
+                      color={"#f5c144"}
+                      color={"#f5c144"}
+                      orientation="center"
+                    ></Divider>
+                    <Text style={styles.dialogRules}>
+                      Jon Ander Pazos
+                    </Text>
+                    <Divider
+                      color={"#f5c144"}
+                      color={"#f5c144"}
+                      orientation="center"
+                    ></Divider>
+                    <Text style={styles.dialogGenre}>Questions</Text>
+                    <Divider
+                      color={"#f5c144"}
+                      color={"#f5c144"}
+                      orientation="center"
+                    ></Divider>
+                    <Text style={styles.dialogRules}>
+                      Nicklas Dupont
+                    </Text>
+                    <Divider
+                      color={"#f5c144"}
+                      color={"#f5c144"}
+                      orientation="center"
+                    ></Divider>
+                    <Text style={styles.dialogRules}>
+                      Andreas Ballieu Lagoni
+                    </Text>
+                    <Divider
+                      color={"#f5c144"}
+                      color={"#f5c144"}
+                      orientation="center"
+                    ></Divider>
+                    <Text style={styles.dialogRules}>
+                      Katrine Junker
+                    </Text>
                   </View>
                 </ScrollView>
               </DialogContent>
             </Dialog>
           </Menu>
         </Appbar.Header>
-        <FlatList
-          ListHeaderComponent={<></>}
-          data={data}
-          nestedScrollEnabled={true}
-          keyExtractor={(item, index) => item.title}
-          renderItem={({ item }) => (
-            <List.Item
-              left={(props) => <List.Icon {...props} icon={item.icon} />}
-              onPress={this.handleDeckSelected(item.title)}
-              title={item.title}
-              description={item.description}
-              style={styles.listItem}
-            />
-          )}
-          ListFooterComponent={<></>}
-        />
+        {items && (
+          <FlatList
+            ListHeaderComponent={<></>}
+            data={data}
+            nestedScrollEnabled={true}
+            keyExtractor={(item, index) => item.title}
+            renderItem={({ item }) => (
+              <List.Item
+                left={(props) => <List.Icon {...props} icon={item.icon} />}
+                onPress={this.handleDeckSelected(item.title)}
+                title={item.title}
+                description={item.description}
+                style={styles.listItem}
+              />
+            )}
+            ListFooterComponent={<></>}
+          />
+        )}
       </View>
     );
   }
@@ -203,14 +269,15 @@ let randomRGB = () => {
   let red = Math.floor(Math.random() * 255);
   let green = Math.floor(Math.random() * 255);
   let blue = Math.floor(Math.random() * 255);
-  let color = "'"+"rgba("+red+","+green+","+blue+","+"1.0"+")"+"'";
-  
+  let color =
+    "'" + "rgba(" + red + "," + green + "," + blue + "," + "1.0" + ")" + "'";
+
   return color;
-}
+};
 
 const color = () => {
-  return randomRGB()
-}
+  return randomRGB();
+};
 
 const styles = StyleSheet.create({
   listItem: {
@@ -233,7 +300,7 @@ const styles = StyleSheet.create({
   },
   fixed: {
     position: "absolute",
-    bottom: 0
+    bottom: 0,
   },
   scrollview: {
     backgroundColor: "transparent",
@@ -282,6 +349,16 @@ const styles = StyleSheet.create({
     color: "#f5c144",
     paddingBottom: -2,
     marginTop: -5,
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: 1, height: -1 },
+    textShadowRadius: 4,
+  },
+  credit: {
+    fontFamily: "GloriaHallelujah",
+    textAlign: "center",
+    fontSize: 40,
+    color: "#f5c144",
+    marginTop: 0,
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: 1, height: -1 },
     textShadowRadius: 4,

@@ -23,13 +23,38 @@ class AddPlayers extends Component {
     visible: false,
     title: false,
     underTitle: false,
+    deck: false,
   };
 
   componentDidMount() {
+    var CustomAnimation = {
+      duration: 800,
+      create: {
+        type: LayoutAnimation.Types.easeIn,
+        property: LayoutAnimation.Properties.opacity,
+        springDamping: 3.4,
+      },
+    };
+
     setTimeout(() => {
-      LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
+      LayoutAnimation.configureNext(CustomAnimation);
+      this.setState({ title: true });
+    }, 500);
+
+    setTimeout(() => {
+      LayoutAnimation.configureNext(CustomAnimation);
+      this.setState({ underTitle: true });
+    }, 1600);
+
+    setTimeout(() => {
+      LayoutAnimation.configureNext(CustomAnimation);
       this.setState({ visible: true });
-    }, 1000);
+    }, 2500);
+
+    setTimeout(() => {
+      LayoutAnimation.configureNext(CustomAnimation);
+      this.setState({ deck: true });
+    }, 3400);
   }
 
   handleAddPlayer = () => {
@@ -70,29 +95,31 @@ class AddPlayers extends Component {
   };
 
   render() {
-    const { players, current, visible } = this.state;
+    const { players, current, visible, title, underTitle, deck } = this.state;
 
     return (
-          <View style={styles.container}>
-            <LinearGradient
-              // Background Linear Gradient
-              colors={["#f5c144", "#e0e0e0"]}
-              style={{
-                position: "absolute",
-                left: 0,
-                right: 0,
-                top: 0,
-                height: Dimensions.get("window").height, //for full screen
-              }}
-              start={{ x: -1, y: 0 }}
-              end={{ x: -1.1, y: 0.61 }}
-            />
-            <View style={styles.title}>
+      <View style={styles.container}>
+        <LinearGradient
+          // Background Linear Gradient
+          colors={["#f5c144", "#e0e0e0"]}
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            top: 0,
+            height: Dimensions.get("window").height, //for full screen
+          }}
+          start={{ x: -1, y: 0 }}
+          end={{ x: -1.1, y: 0.61 }}
+        />
+        <View style={styles.head}></View>
+          <View style={styles.title}>
+            {title && (
               <Text
                 style={{
                   fontFamily: "GloriaHallelujah",
                   textAlign: "center",
-                  fontSize: 80,
+                  fontSize: 85,
                   color: "#f5c144",
                   textShadowColor: "rgba(0,0,0,1)",
                   textShadowOffset: { width: 1, height: -1 },
@@ -102,92 +129,98 @@ class AddPlayers extends Component {
               >
                 Smashed
               </Text>
+            )}
+          </View>
+          <View style={styles.underTitle}>
+            {underTitle && (
               <Text
                 style={{
-                  fontSize: 16,
+                  fontSize: 18,
                   color: "#f5c144",
                   textAlign: "center",
-                  marginTop: -30,
                   textShadowColor: "rgba(0,0,0,1)",
                   textShadowOffset: { width: 1, height: -1 },
                   textShadowRadius: 4,
                   width: 400,
-                  height: 40,
                 }}
               >
                 The last drinking app you will ever need
               </Text>
-            </View>
-            <View style={styles.containerInput}>
-              {visible && (
-                <Fragment>
-                  <View style={styles.parentInput}>
-                    <TextInput
-                      style={styles.input}
-                      label="Add player"
-                      placeholder="New player name"
-                      placeholderTextColor="black"
-                      value={current}
-                      maxLength={40}
-                      onChangeText={(current) => this.setState({ current })}
-                      onSubmitEditing={this.handleAddPlayer}
-                      blurOnSubmit={!current}
-                      returnKeyType={"done"}
-                    />
-                  </View>
-
-                  <View style={styles.chipContainer}>
-                    <ScrollView style={styles.chipContainerScroll}>
-                      {players.map((current) => (
-                        <Chip
-                          style={styles.chip}
-                          key={current}
-                          onPress={this.handleEditPlayer(current)}
-                          onClose={this.handleRemovePlayer(current)}
-                        >
-                          {current}
-                        </Chip>
-                      ))}
-                    </ScrollView>
-                  </View>
-                </Fragment>
-              )}
-            </View>
-            <View style={styles.button}>
-              <Button
-                style={styles.deckBtn}
-                onPress={this.handleChooseDeck}
-                type="contained"
-              >
-                <Text
-                  style={{
-                    color: "#f5c144",
-                    fontWeight: "bold",
-                    textShadowColor: "rgba(0,0,0,1)",
-                    textShadowOffset: { width: 1, height: -1 },
-                    textShadowRadius: 2,
-                  }}
-                >
-                  Choose deck
-                </Text>
-              </Button>
-            </View>
-            <View style={styles.background}>
-              <ImageBackground
-                source={rotatingDrinks}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  overflow: "hidden", // prevent image overflow the container
-                }}
-                imageStyle={{
-                  resizeMode: "cover",
-                  height: "100%", // the image height
-                  top: undefined,
-                }}
-              />
-            </View>
+            )}
           </View>
+        
+        <View style={styles.containerInput}>
+          {visible && (
+            <Fragment>
+              <View style={styles.parentInput}>
+                <TextInput
+                  style={styles.input}
+                  label="Add player"
+                  placeholder="New player name"
+                  placeholderTextColor="black"
+                  value={current}
+                  maxLength={40}
+                  onChangeText={(current) => this.setState({ current })}
+                  onSubmitEditing={this.handleAddPlayer}
+                  blurOnSubmit={!current}
+                  returnKeyType={"done"}
+                />
+              </View>
+
+              <View style={styles.chipContainer}>
+                <ScrollView style={styles.chipContainerScroll}>
+                  {players.map((current) => (
+                    <Chip
+                      style={styles.chip}
+                      key={current}
+                      onPress={this.handleEditPlayer(current)}
+                      onClose={this.handleRemovePlayer(current)}
+                    >
+                      {current}
+                    </Chip>
+                  ))}
+                </ScrollView>
+              </View>
+            </Fragment>
+          )}
+        </View>
+        <View style={styles.button}>
+          {deck && (
+            <Button
+              style={styles.deckBtn}
+              onPress={this.handleChooseDeck}
+              type="contained"
+            >
+              <Text
+                style={{
+                  color: "#f5c144",
+                  fontWeight: "bold",
+                  textShadowColor: "rgba(0,0,0,1)",
+                  textShadowOffset: { width: 1, height: -1 },
+                  textShadowRadius: 2,
+                }}
+              >
+                Choose deck
+              </Text>
+            </Button>
+          )}
+        </View>
+        <View style={styles.background}>
+          <ImageBackground
+            source={rotatingDrinks}
+            style={{
+              width: "100%",
+              height: "100%",
+              overflow: "hidden", // prevent image overflow the container
+            }}
+            imageStyle={{
+              resizeMode: "cover",
+              height: "100%", // the image height
+              top: undefined,
+            }}
+          />
+        </View>
+      </View>
     );
   }
 }
@@ -218,13 +251,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#e0e0e0",
   },
-  title: {
+  head: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    height: 250,
     width: Dimensions.get("window").width, //for full screen
-    backgroundColor: "transparent",
+
+  },
+
+  title: {
+    alignItems: "center",
+
+  },
+  underTitle: {
+    alignItems: "center",
+    height: 70,
   },
   containerInput: {
     height: 250,
@@ -278,6 +319,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width, //for full screen
     bottom: 0,
     alignItems: "center",
+    height: 39,
   },
   deckBtn: {
     backgroundColor: "rgba(245,245,245,0.5)",

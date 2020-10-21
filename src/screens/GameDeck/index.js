@@ -7,6 +7,7 @@ import {
   Text,
   ImageBackground,
   Dimensions,
+  LayoutAnimation,
 } from "react-native";
 
 import activeDeck from "../../containers/active-deck";
@@ -23,10 +24,25 @@ class GameDeck extends Component {
     color: new Animated.Value(0),
     btnColor: new Animated.Value(0),
     animating: false,
+    card: false,
   };
 
   async componentDidMount() {
     await this.handleNextCard();
+
+    var CustomAnimation = {
+      duration: 700,
+      create: {
+        type: LayoutAnimation.Types.easeIn,
+        property: LayoutAnimation.Properties.opacity,
+        springDamping: 3.4,
+      },
+    };
+
+    setTimeout(() => {
+      LayoutAnimation.configureNext(CustomAnimation);
+      this.setState({ card: true });
+    }, 700);
   }
 
   handleNextCard = async () => {
@@ -58,13 +74,13 @@ class GameDeck extends Component {
         animating: false,
         currentIndex: this.state.currentIndex + 1,
       });
-    }, );
+    });
   };
 
   handleBack = () => this.props.navigation.goBack();
 
   render() {
-    const { text, isGameDone, animating, currentIndex } = this.state;
+    const { text, isGameDone, animating, currentIndex, card } = this.state;
     const btnHandler = isGameDone ? this.handleBack : this.handleNextCard;
 
     return (
@@ -72,33 +88,35 @@ class GameDeck extends Component {
         <View style={styles.gameBoard}>
           <LinearGradient
             // Background Linear Gradient
-            colors={[color(), "#e0e0e0"]}
+            colors={[randomRB(), randomRG()]}
             style={styles.imageBackground}
             start={{ x: -1, y: 0 }}
             end={{ x: -1, y: 1.3 }}
           >
-            <View style={styles.textContainer}>
-              <TouchableOpacity
-                mode="outlined"
-                color="#fff"
-                onPress={btnHandler}
-                hitSlop={{ top: 500, bottom: 700, left: 100, right: 100 }}
-                style={[styles.btn]}
-                type="contained"
-                dark
-              >
-                {currentIndex === 0 ? null : (
-                  <Animated.Text
-                    style={[
-                      styles.text,
-                      { color: animating ? color : color() },
-                    ]}
-                  >
-                    {text}
-                  </Animated.Text>
-                )}
-              </TouchableOpacity>
-            </View>
+            {card && (
+              <View style={styles.textContainer}>
+                <TouchableOpacity
+                  mode="outlined"
+                  color="#fff"
+                  onPress={btnHandler}
+                  hitSlop={{ top: 500, bottom: 700, left: 100, right: 100 }}
+                  style={[styles.btn]}
+                  type="contained"
+                  dark
+                >
+                  {currentIndex === 0 ? null : (
+                    <Animated.Text
+                      style={[
+                        styles.text,
+                        { color: animating ? color : color() },
+                      ]}
+                    >
+                      {text}
+                    </Animated.Text>
+                  )}
+                </TouchableOpacity>
+              </View>
+            )}
           </LinearGradient>
         </View>
       </Animated.View>
@@ -110,26 +128,45 @@ let randomRGB = () => {
   let red = Math.floor(Math.random() * 255);
   let green = Math.floor(Math.random() * 255);
   let blue = Math.floor(Math.random() * 255);
-  let color = "'"+"rgba("+red+","+green+","+blue+","+"1.0"+")"+"'";
-  
+  let color =
+    "'" + "rgba(" + red + "," + green + "," + blue + "," + "1.0" + ")" + "'";
+
   return color;
-}
+};
+
+let randomRB = () => {
+  let red = Math.floor(Math.random() * 255);
+  let green = Math.floor(Math.random() * 140);
+  let blue = Math.floor(Math.random() * 255);
+  let color =
+    "'" + "rgba(" + red + "," + green + "," + blue + "," + "1.0" + ")" + "'";
+
+  return color;
+};
+
+let randomRG = () => {
+  let red = Math.floor(Math.random() * 255);
+  let green = Math.floor(Math.random() * 255);
+  let blue = Math.floor(Math.random() * 140);
+  let color =
+    "'" + "rgba(" + red + "," + green + "," + blue + "," + "1.0" + ")" + "'";
+
+  return color;
+};
 
 const color = () => {
-  return randomRGB()
-}
+  return randomRGB();
+};
 
 const styles = StyleSheet.create({
   container: { flex: 1, overflow: "hidden" },
   textContainer: {
     height: 230,
-    width: 430,
-    backgroundColor: "rgba(0, 0, 0, 0.6)",
+    width: 500,
+    backgroundColor: "rgba(255, 255, 255, 0.4)",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 60,
-    borderWidth: 2,
-    borderColor: color(),
   },
   text: {
     fontFamily: "GloriaHallelujah",
@@ -143,7 +180,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     textShadowColor: "rgba(0,0,0,1)",
     textShadowOffset: { width: 1, height: -1 },
-    textShadowRadius: 4,
+    textShadowRadius: 2,
   },
   btn: {
     margin: 10,
