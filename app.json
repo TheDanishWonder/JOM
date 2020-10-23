@@ -9,9 +9,9 @@
     "orientation": "portrait",
     "scheme": "drinkingapp",
     "primaryColor": "#ffb677",
-    "icon": "src/images/logo.png",
+    "icon": "src/images/splash.png",
     "splash": {
-      "image": "",
+      "image": "src/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#fff"
     },

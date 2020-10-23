@@ -13,6 +13,7 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { Chip, TextInput, Button } from "react-native-paper";
 import rotatingDrinks from "../../../assets/beerLoad.gif";
+import logo from "../../../assets/logo_675x675.png";
 
 import playersContainer from "../../containers/players";
 
@@ -101,7 +102,7 @@ class AddPlayers extends Component {
       <View style={styles.container}>
         <LinearGradient
           // Background Linear Gradient
-          colors={["#f5c144", "#e0e0e0"]}
+          colors={["#00f7ff", "#e0e0e0"]}
           style={{
             position: "absolute",
             left: 0,
@@ -112,7 +113,8 @@ class AddPlayers extends Component {
           start={{ x: -1, y: 0 }}
           end={{ x: -1.1, y: 0.61 }}
         />
-        <View style={styles.head}></View>
+        <View style={styles.head}>
+        </View>
           <View style={styles.title}>
             {title && (
               <Text
@@ -193,7 +195,7 @@ class AddPlayers extends Component {
             >
               <Text
                 style={{
-                  color: "#f5c144",
+                  color: "#00f7ff",
                   fontWeight: "bold",
                   textShadowColor: "rgba(0,0,0,1)",
                   textShadowOffset: { width: 1, height: -1 },

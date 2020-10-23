@@ -313,6 +313,22 @@ export default {
       const player = getRandomPlayer(players);
       return `${player}, mine a scene from a movie, first person to guess the movie gives out ${getRandomSip()} sips`;
     },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player}, Name ${getRandomSip() + 4} states in the US, take ${getRandomSip()} sips if you cant`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player}, Name ${getRandomSip() + 4} currencies, take ${getRandomSip()} sips if you cant`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player}, Read the last dm you recieved out loud, take ${getRandomSip()} sips if you refuse`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player}, Drink as many sips as there are years between you and the youngest player at the table`;
+    },
 
 
 
@@ -371,6 +387,8 @@ export default {
     () => `Take ${getRandomSip()} sips, if you ever heard a reltive doing the nasty`,
     () => `First person to pull out a condom, give out ${getRandomSip()} sips ( ${safeSexJoke} )`,
     () => `If you were drunk yesterday, take ${getRandomSip()} sips`,
+    () => `Anyone wearing black underwear, take ${getRandomSip()} sips`,
+
 
     // 129
   ],

@@ -76,7 +76,7 @@ class ChooseGame extends React.Component {
       >
         <LinearGradient
           // Background Linear Gradient
-          colors={["#f5c144", "#e0e0e0"]}
+          colors={["#00f7ff", "#e0e0e0"]}
           style={{
             position: "absolute",
             left: 0,
@@ -96,7 +96,7 @@ class ChooseGame extends React.Component {
         <Appbar.Header
           dark
           style={{
-            backgroundColor: "#f5c144",
+            backgroundColor: "#00f7ff",
             marginTop: 2,
             alignItems: "center",
             justifyContent: "center",
@@ -137,7 +137,7 @@ class ChooseGame extends React.Component {
               <DialogContent>
                 <LinearGradient
                   // Background Linear Gradient
-                  colors={["#f5c144", "transparent"]}
+                  colors={["#00f7ff", "transparent"]}
                   style={{
                     position: "absolute",
                     left: 0,
@@ -153,8 +153,8 @@ class ChooseGame extends React.Component {
                     <Text style={styles.dialogTitle}>Smashed</Text>
                     <Text style={styles.dialogUnderTitle}>How to play</Text>
                     <Divider
-                      color={"#f5c144"}
-                      color={"#f5c144"}
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>General Game Rules</Text>
@@ -163,8 +163,8 @@ class ChooseGame extends React.Component {
                       drink responsibly
                     </Text>
                     <Divider
-                      color={"#f5c144"}
-                      color={"#f5c144"}
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>Truth or Drink</Text>
@@ -172,8 +172,8 @@ class ChooseGame extends React.Component {
                       Tell the truth or drink the amount of sips the card tells.
                     </Text>
                     <Divider
-                      color={"#f5c144"}
-                      color={"#f5c144"}
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>Would you Rather</Text>
@@ -184,55 +184,55 @@ class ChooseGame extends React.Component {
                       or put your hand down for the second.
                     </Text>
                     <Divider
-                      color={"#f5c144"}
-                      color={"#f5c144"}
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
 
                     <Text style={styles.dialogUnderTitle, styles.credit}>Credit</Text>
                     <Divider
-                      color={"#f5c144"}
-                      color={"#f5c144"}
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>Gif Design</Text>
                     <Divider
-                      color={"#f5c144"}
-                      color={"#f5c144"}
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogRules}>
                       Jon Ander Pazos
                     </Text>
                     <Divider
-                      color={"#f5c144"}
-                      color={"#f5c144"}
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>Questions</Text>
                     <Divider
-                      color={"#f5c144"}
-                      color={"#f5c144"}
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogRules}>
                       Nicklas Dupont
                     </Text>
                     <Divider
-                      color={"#f5c144"}
-                      color={"#f5c144"}
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogRules}>
                       Andreas Ballieu Lagoni
                     </Text>
                     <Divider
-                      color={"#f5c144"}
-                      color={"#f5c144"}
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogRules}>
-                      Katrine Junker
+                      Katrine Juncker
                     </Text>
                   </View>
                 </ScrollView>
