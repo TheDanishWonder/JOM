@@ -13,8 +13,6 @@ export default {
     () => `Never have i ever given somebody else a STD, losers take ${getLowSip()} sips`,
     () => `Never have i ever cockblocked on purpose, losers take ${getLowSip()} sips`,
     () => `Never have i ever walked the walk of shame, losers take ${getLowSip()} sips`,
-    () => `Never have i ever , losers take ${getLowSip()} sips`,
-    () => `Everyone that is getting laid tonight take ${getLowSip()} sips.`,
     () => `Never have i ever dumped a person cause of your body count, losers take ${getLowSip()} sips`,
     () => `Never have i ever driven past my destination because i was too drunk or asleep, losers take ${getLowSip()} sips`,
     () => `Never have i ever masturbated multiple times in one day, losers take ${getLowSip()} sips`,

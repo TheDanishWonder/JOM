@@ -7,7 +7,7 @@ export default {
   cards: [
     (players) => {
       const player = getRandomPlayer(players);
-      return  `${player} say, "In my search history, there is...", next person adds a search. Each player repeats all the searches and adds on a new search. first to fail take ${getRandomSip()} sips`;
+      return `${player}, Do you have a hidden talent? If you do, post a video of it on your instagram story with hashtag #smasheddrinkinggame, drink ${getRandomSip()} if you dont`;
     },
     () =>
       `First person to pull out a condom, give out ${getRandomSip()} sips (${randomJoke})`,

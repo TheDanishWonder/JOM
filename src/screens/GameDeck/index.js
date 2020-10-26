@@ -126,8 +126,17 @@ class GameDeck extends Component {
 
 let randomRGB = () => {
   let red = Math.floor(Math.random() * 255);
+  if(red < 30) {
+    red + 50
+  }
   let green = Math.floor(Math.random() * 255);
+  if(green < 30) {
+    green + 50
+  }
   let blue = Math.floor(Math.random() * 255);
+  if(blue < 30) {
+    blue + 50
+  }
   let color =
     "'" + "rgba(" + red + "," + green + "," + blue + "," + "1.0" + ")" + "'";
 
@@ -161,8 +170,8 @@ const color = () => {
 const styles = StyleSheet.create({
   container: { flex: 1, overflow: "hidden" },
   textContainer: {
-    height: 230,
-    width: 500,
+    height: "65%",
+    width: "75%",
     backgroundColor: "rgba(255, 255, 255, 0.4)",
     alignItems: "center",
     justifyContent: "center",
@@ -172,12 +181,8 @@ const styles = StyleSheet.create({
     fontFamily: "GloriaHallelujah",
     color: "#f5c144",
     fontSize: 25,
-    alignSelf: "center",
-    justifyContent: "center",
     margin: 10,
-    marginLeft: 15,
-    flex: 1,
-    flexWrap: "wrap",
+    textAlign: "center",
     textShadowColor: "rgba(0,0,0,1)",
     textShadowOffset: { width: 1, height: -1 },
     textShadowRadius: 2,

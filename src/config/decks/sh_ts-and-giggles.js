@@ -329,7 +329,38 @@ export default {
       const player = getRandomPlayer(players);
       return `${player}, Drink as many sips as there are years between you and the youngest player at the table`;
     },
-
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player}, What’s the most embarrasing thing you’ve done while drunk? Everyone cheers to embarrasing stories`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player}, What’s something you’ve done while drunk that you would never do sober? Everyone cheers to drunk-us having fun when sober-us dont want to`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player}, How many people in the room would you be willing to kiss? Take the amount of people in sips and continue playing`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player}, What’s your favorite drink? Take as many sips as there are letters in the first word`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player}, If you HAD to play matchmaker, which two players would make a good couple? Everyone cheers for the newly weds`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player}, Do you have a hidden talent? If you do, have someone video it and post it to your story with the hashtag #smasheddrinkinggame, drink ${getRandomSip()} if you dont`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player}, Try to put your whole fist in your mouth, drink ${getRandomSip()} if you cant`;
+    },
+    (players) => {
+      const player = getRandomPlayer(players);
+      return `${player}, Pole dance with an imaginary pole for the next ${getRandomSip()} rounds, drink ${getRandomSip()} if you forget to dance`;
+    },
 
 
     // All players cards

@@ -12,7 +12,7 @@ export default {
     () => `Would you rather not be able to speak or always say all your thoughts out loud`,
     () => `Would you rather lick a dirty transcan or public bathroom floor`,
     () => `wouls you rather drink beer or cider for the rest of your life?`,
-    () => `Would you rather be the worst player on a team that always wins or the best player on a team that always looses`,
+    // () => `Would you rather be the worst player on a team that always wins or the best player on a team that always looses`,
     () => `would you rather make out with a lot or too little tongue`,
     () => `Would you rather never have to shower again or never have to cut your nails`,
     () => `Would you rather sweat jizz or have period blood as snot`,
