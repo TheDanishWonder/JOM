@@ -12,7 +12,6 @@ import {
 
 import activeDeck from "../../containers/active-deck";
 import players from "../../containers/players";
-import background from "../../../assets/exampleBoard.gif";
 import { LinearGradient } from "expo-linear-gradient";
 
 class GameDeck extends Component {

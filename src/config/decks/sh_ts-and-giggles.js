@@ -357,10 +357,13 @@ export default {
       const player = getRandomPlayer(players);
       return `${player}, Try to put your whole fist in your mouth, drink ${getRandomSip()} if you cant`;
     },
+    // 90
     (players) => {
       const player = getRandomPlayer(players);
       return `${player}, Pole dance with an imaginary pole for the next ${getRandomSip()} rounds, drink ${getRandomSip()} if you forget to dance`;
     },
+
+
 
 
     // All players cards
@@ -419,9 +422,9 @@ export default {
     () => `First person to pull out a condom, give out ${getRandomSip()} sips ( ${safeSexJoke} )`,
     () => `If you were drunk yesterday, take ${getRandomSip()} sips`,
     () => `Anyone wearing black underwear, take ${getRandomSip()} sips`,
+    // 54
 
-
-    // 129
+    // 144
   ],
 };
 
