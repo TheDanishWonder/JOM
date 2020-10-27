@@ -11,9 +11,21 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Chip, TextInput, Button } from "react-native-paper";
+import {
+  Chip,
+  TextInput,
+  IconButton,
+  Button,
+  Colors,
+} from "react-native-paper";
 import rotatingDrinks from "../../../assets/beerLoad.gif";
 import logo from "../../../assets/logo_675x675.png";
+import Dialog, {
+  DialogContent,
+  SlideAnimation,
+} from "react-native-popup-dialog";
+
+import Divider from "react-native-divider";
 
 import playersContainer from "../../containers/players";
 
@@ -25,6 +37,7 @@ class AddPlayers extends Component {
     title: false,
     underTitle: false,
     deck: false,
+    drinkWarning: false,
   };
 
   componentDidMount() {
@@ -56,6 +69,10 @@ class AddPlayers extends Component {
       LayoutAnimation.configureNext(CustomAnimation);
       this.setState({ deck: true });
     }, 3400);
+
+    setTimeout(() => {
+      this.setState({ drinkWarning: true });
+    }, 4000);
   }
 
   handleAddPlayer = () => {
@@ -113,44 +130,43 @@ class AddPlayers extends Component {
           start={{ x: -1, y: 0 }}
           end={{ x: -1.1, y: 0.61 }}
         />
-        <View style={styles.head}>
+        <View style={styles.head}></View>
+        <View style={styles.title}>
+          {title && (
+            <Text
+              style={{
+                fontFamily: "GloriaHallelujah",
+                textAlign: "center",
+                fontSize: 85,
+                color: "#f5c144",
+                textShadowColor: "rgba(0,0,0,1)",
+                textShadowOffset: { width: 1, height: -1 },
+                textShadowRadius: 10,
+                width: 400,
+              }}
+            >
+              Smashed
+            </Text>
+          )}
         </View>
-          <View style={styles.title}>
-            {title && (
-              <Text
-                style={{
-                  fontFamily: "GloriaHallelujah",
-                  textAlign: "center",
-                  fontSize: 85,
-                  color: "#f5c144",
-                  textShadowColor: "rgba(0,0,0,1)",
-                  textShadowOffset: { width: 1, height: -1 },
-                  textShadowRadius: 10,
-                  width: 400,
-                }}
-              >
-                Smashed
-              </Text>
-            )}
-          </View>
-          <View style={styles.underTitle}>
-            {underTitle && (
-              <Text
-                style={{
-                  fontSize: 18,
-                  color: "#f5c144",
-                  textAlign: "center",
-                  textShadowColor: "rgba(0,0,0,1)",
-                  textShadowOffset: { width: 1, height: -1 },
-                  textShadowRadius: 4,
-                  width: 400,
-                }}
-              >
-                The last drinking app you will ever need
-              </Text>
-            )}
-          </View>
-        
+        <View style={styles.underTitle}>
+          {underTitle && (
+            <Text
+              style={{
+                fontSize: 18,
+                color: "#f5c144",
+                textAlign: "center",
+                textShadowColor: "rgba(0,0,0,1)",
+                textShadowOffset: { width: 1, height: -1 },
+                textShadowRadius: 4,
+                width: 400,
+              }}
+            >
+              The last drinking app you will ever need
+            </Text>
+          )}
+        </View>
+
         <View style={styles.containerInput}>
           {visible && (
             <Fragment>
@@ -185,6 +201,60 @@ class AddPlayers extends Component {
               </View>
             </Fragment>
           )}
+          <Dialog
+            width={0.8}
+            height={0.4}
+            containerStyle={{ marginTop: 100 }}
+            onHardwareBackPress={() => {
+              true;
+            }}
+            overlayOpacity={0.5}
+            dialogAnimation={
+              new SlideAnimation({
+                slideFrom: "bottom",
+              })
+            }
+            visible={this.state.drinkWarning}
+            onTouchOutside={() => {
+              this.setState({ drinkWarning: false });
+            }}
+          >
+            <DialogContent>
+              <View style={styles.dialogContainer}>
+                <Text style={styles.dialogTitle}>Disclaimer</Text>
+                <Divider
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
+                      orientation="center"
+                    ></Divider>
+                <Text style={styles.dialogUnderTitle}>
+                  Please remember to drink responsibly and look out for your
+                  friends.
+                </Text>
+                <Divider
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
+                      orientation="center"
+                    ></Divider>
+                <Text style={styles.dialogPolicy}>
+                  By continuing, you agree to Smashed app-usage policy, for
+                  further information please click
+                  <IconButton
+                    icon="help-circle-outline"
+                    color={Colors.black}
+                    size={20}
+                    style={{marginTop: -15}}
+                  />
+                  on the next page
+                </Text>
+                <Divider
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
+                      orientation="center"
+                    ></Divider>
+              </View>
+            </DialogContent>
+          </Dialog>
         </View>
         <View style={styles.button}>
           {deck && (
@@ -258,12 +328,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: Dimensions.get("window").width, //for full screen
-
   },
 
   title: {
     alignItems: "center",
-
   },
   underTitle: {
     alignItems: "center",
@@ -333,6 +401,21 @@ const styles = StyleSheet.create({
   background: {
     height: 200,
     width: Dimensions.get("window").width, //for full screen
+  },
+  dialogContainer: {
+    height: "110%",
+    width: "100%",
+    alignItems: "center",
+    paddingTop: 10
+  },
+  dialogTitle: {
+    fontSize: 30,
+    alignItems: "center",
+  },
+  dialogUnderTitle: {
+    fontSize: 20,
+    alignItems: "center",
+
   },
 });
 

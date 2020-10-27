@@ -178,62 +178,56 @@ class ChooseGame extends React.Component {
                     ></Divider>
                     <Text style={styles.dialogGenre}>Would you Rather</Text>
                     <Text style={styles.dialogRules}>
-                      Everybody plays at the same time, one player counts down
-                      from 3, when everybody have thought about the question,
-                      you either put your hand in the air for the first answer
-                      or put your hand down for the second.
+                      One player reads the question, when everybody have heard
+                      and thought about the question, a player counts down from
+                      3 and each player either raise their hand for the first
+                      answer or keep their hand down for the 2 second answer,
+                      the answer with fewest supporters takes a sip of your
+                      drink, if its a tie everybody drinks.
                     </Text>
                     <Divider
                       color={"#00f7ff"}
                       color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
-
-                    <Text style={styles.dialogUnderTitle, styles.credit}>Credit</Text>
+                    <Text style={(styles.dialogUnderTitle, styles.credit)}>
+                      Credit
+                    </Text>
                     <Divider
                       color={"#00f7ff"}
                       color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>Gif Design</Text>
-                    <Divider
-                      color={"#00f7ff"}
-                      color={"#00f7ff"}
-                      orientation="center"
-                    ></Divider>
-                    <Text style={styles.dialogRules}>
-                      Jon Ander Pazos
-                    </Text>
+                    <Text style={styles.dialogRules}>Jon Ander Pazos</Text>
                     <Divider
                       color={"#00f7ff"}
                       color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
                     <Text style={styles.dialogGenre}>Questions</Text>
-                    <Divider
-                      color={"#00f7ff"}
-                      color={"#00f7ff"}
-                      orientation="center"
-                    ></Divider>
-                    <Text style={styles.dialogRules}>
-                      Nicklas Dupont
-                    </Text>
-                    <Divider
-                      color={"#00f7ff"}
-                      color={"#00f7ff"}
-                      orientation="center"
-                    ></Divider>
+                    <Text style={styles.dialogRules}>Nicklas Dupont</Text>
                     <Text style={styles.dialogRules}>
                       Andreas Ballieu Lagoni
                     </Text>
+                    <Text style={styles.dialogRules}>Katrine Juncker</Text>
                     <Divider
                       color={"#00f7ff"}
                       color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
-                    <Text style={styles.dialogRules}>
-                      Katrine Juncker
+                    <Text style={(styles.dialogUnderTitle, styles.credit)}>
+                      Policy
                     </Text>
+                    <Text style={styles.dialogRules}>
+                      The user of the app agree to be fully responsible for any
+                      consequences that may result from the use of Smashed.
+                    </Text>
+                    <Divider
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
+                      orientation="center"
+                    ></Divider>
                   </View>
                 </ScrollView>
               </DialogContent>
@@ -335,7 +329,7 @@ const styles = StyleSheet.create({
   dialogGenre: {
     fontFamily: "GloriaHallelujah",
     textAlign: "center",
-    fontSize: 25,
+    fontSize: 27,
     color: "#f5c144",
     padding: 5,
     textShadowColor: "rgba(0, 0, 0, 0.75)",
@@ -345,7 +339,7 @@ const styles = StyleSheet.create({
   dialogRules: {
     fontFamily: "GloriaHallelujah",
     textAlign: "center",
-    fontSize: 20,
+    fontSize: 23,
     color: "#f5c144",
     paddingBottom: -2,
     marginTop: -5,
