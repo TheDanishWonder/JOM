@@ -49,7 +49,6 @@ class AddPlayers extends Component {
         springDamping: 3.4,
       },
     };
-
     setTimeout(() => {
       LayoutAnimation.configureNext(CustomAnimation);
       this.setState({ title: true });
@@ -79,9 +78,8 @@ class AddPlayers extends Component {
     const { players, current } = this.state;
 
     if (!current) {
-      return null;
+      return;
     }
-
     this.setState({
       current: "",
       players: [...players, current],
@@ -111,6 +109,10 @@ class AddPlayers extends Component {
       players: players.filter((current) => current !== player),
     });
   };
+
+  componentWillUnmount() {
+    this.state.drinkWarning = false
+  }
 
   render() {
     const { players, current, visible, title, underTitle, deck } = this.state;
@@ -223,19 +225,19 @@ class AddPlayers extends Component {
               <View style={styles.dialogContainer}>
                 <Text style={styles.dialogTitle}>Disclaimer</Text>
                 <Divider
-                      color={"#00f7ff"}
-                      color={"#00f7ff"}
-                      orientation="center"
-                    ></Divider>
+                  color={"#00f7ff"}
+                  color={"#00f7ff"}
+                  orientation="center"
+                ></Divider>
                 <Text style={styles.dialogUnderTitle}>
                   Please remember to drink responsibly and look out for your
                   friends.
                 </Text>
                 <Divider
-                      color={"#00f7ff"}
-                      color={"#00f7ff"}
-                      orientation="center"
-                    ></Divider>
+                  color={"#00f7ff"}
+                  color={"#00f7ff"}
+                  orientation="center"
+                ></Divider>
                 <Text style={styles.dialogPolicy}>
                   By continuing, you agree to Smashed app-usage policy, for
                   further information please click
@@ -243,15 +245,15 @@ class AddPlayers extends Component {
                     icon="help-circle-outline"
                     color={Colors.black}
                     size={20}
-                    style={{marginTop: -15}}
+                    style={{ marginTop: -15 }}
                   />
                   on the next page
                 </Text>
                 <Divider
-                      color={"#00f7ff"}
-                      color={"#00f7ff"}
-                      orientation="center"
-                    ></Divider>
+                  color={"#00f7ff"}
+                  color={"#00f7ff"}
+                  orientation="center"
+                ></Divider>
               </View>
             </DialogContent>
           </Dialog>
@@ -297,20 +299,6 @@ class AddPlayers extends Component {
   }
 }
 
-let randomRGB = () => {
-  let red = Math.floor(Math.random() * 255);
-  let green = Math.floor(Math.random() * 255);
-  let blue = Math.floor(Math.random() * 255);
-  let color =
-    "'" + "rgba(" + red + "," + green + "," + blue + "," + "1.0" + ")" + "'";
-
-  return color;
-};
-
-const color = () => {
-  return randomRGB();
-};
-
 const styles = StyleSheet.create({
   main: {
     width: Dimensions.get("window").width, //for full screen
@@ -329,7 +317,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: Dimensions.get("window").width, //for full screen
   },
-
   title: {
     alignItems: "center",
   },
@@ -406,7 +393,7 @@ const styles = StyleSheet.create({
     height: "110%",
     width: "100%",
     alignItems: "center",
-    paddingTop: 10
+    paddingTop: 10,
   },
   dialogTitle: {
     fontSize: 30,
@@ -415,7 +402,6 @@ const styles = StyleSheet.create({
   dialogUnderTitle: {
     fontSize: 20,
     alignItems: "center",
-
   },
 });
 

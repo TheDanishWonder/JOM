@@ -1,7 +1,11 @@
 import { getRandomPlayer, getRandomSip } from './utils'
 
 const generalCards = [
-  () => `Buffalo! Anyone drinking with their right hand must take ${getRandomSip()} sips from now on.`,
+  () => `Get Smashed! Anyone drinking with their right hand must take ${getRandomSip()} sips from now on.`,
+  (players) => {
+    const player = getRandomPlayer(players)
+    return `${player} pick a mate. Everytime you drink, so does the other person.`
+  },
   (players) => {
     const player = getRandomPlayer(players)
     return `${player} pick a mate. Everytime you drink, so does the other person.`
@@ -12,9 +16,11 @@ const generalCards = [
     return `${player1} your new name is ${player2} and visa versa. Anyone incorrectly using your old name take ${getRandomSip()} sips.`
   },
   (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} every time ${player} drink you cheer them on and vise versa, for the next ${getRandomSip()} rounds.`
+    const player1 = getRandomPlayer(players)
+    const player2 = getRandomPlayer(players.filter(current => current !== player1))
+    return `${player1} every time ${player2} drink you cheer them on and vise versa, for the next ${getRandomSip()} rounds.`
   },
+  
   () => `All the boys in the group, take ${getRandomSip()} sips.`,
   () => `All the girls in the group, take ${getRandomSip()} sips.`,
   () => `Everybody drinks ${getRandomSip()} sips if your fathers name contains the letter "${getRandomString(1)}"`,

@@ -52,6 +52,12 @@ export default class App extends React.Component {
     }
   };
 
+  componentWillUnmount() {
+    this.state.fontLoaded = false,
+    this.state.appIsReady = false,
+    this.state.loading = false
+  }
+
 
   render() {
     if (!this.state.appIsReady) {

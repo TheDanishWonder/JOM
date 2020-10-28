@@ -65,6 +65,10 @@ class ChooseGame extends React.Component {
 
   handleBack = () => this.props.navigation.goBack();
 
+  componentWillUnmount() {
+    this.state.visible = false;
+  }
+
   render() {
     const { items } = this.state;
     return (
@@ -258,20 +262,6 @@ class ChooseGame extends React.Component {
 }
 
 export default ChooseGame;
-
-let randomRGB = () => {
-  let red = Math.floor(Math.random() * 255);
-  let green = Math.floor(Math.random() * 255);
-  let blue = Math.floor(Math.random() * 255);
-  let color =
-    "'" + "rgba(" + red + "," + green + "," + blue + "," + "1.0" + ")" + "'";
-
-  return color;
-};
-
-const color = () => {
-  return randomRGB();
-};
 
 const styles = StyleSheet.create({
   listItem: {
