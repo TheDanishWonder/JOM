@@ -13,6 +13,7 @@ import {
 import activeDeck from "../../containers/active-deck";
 import players from "../../containers/players";
 import { LinearGradient } from "expo-linear-gradient";
+import headerGif from "../../../assets/beerLoad.gif";
 
 const height = Dimensions.get("window").height; //for full screen
 const width = Dimensions.get("window").width; //for full screen
@@ -21,7 +22,7 @@ class GameDeck extends Component {
   state = {
     text: "",
     isGameDone: false,
-    bgColor: "#ffb677",
+    backgroundColor: "#ffb677",
     currentIndex: 0,
     color: new Animated.Value(0),
     btnColor: new Animated.Value(0),
@@ -42,14 +43,18 @@ class GameDeck extends Component {
       },
     };
 
+    LayoutAnimation.configureNext(CustomAnimation);
+    this.setState({ animating: true });
+
     setTimeout(() => {
       LayoutAnimation.configureNext(CustomAnimation);
       this.setState({ card: true });
     }, 1500);
+
     setTimeout(() => {
       LayoutAnimation.configureNext(CustomAnimation);
       this.setState({ bgColor: true });
-    }, 300);
+    });
   }
 
   handleNextCard = async () => {
@@ -86,6 +91,9 @@ class GameDeck extends Component {
 
   componentWillUnmount() {
     this.handleNextCard();
+    this.state.animating = false;
+    this.state.card = false;
+    this.state.bgColor = false;
   }
 
   handleBack = () => this.props.navigation.goBack();
@@ -103,42 +111,58 @@ class GameDeck extends Component {
 
     return (
       <Animated.View style={styles.container}>
-        {bgColor && (
-          <View style={styles.gameBoard}>
-            <LinearGradient
-              // Background Linear Gradient
-              colors={[randomRB(), randomRG()]}
-              style={styles.imageBackground}
-              start={{ x: -1, y: 0 }}
-              end={{ x: -1, y: 1.3 }}
-            >
-              {card && (
-                <View style={styles.textContainer}>
-                  <TouchableOpacity
-                    mode="outlined"
-                    color="#fff"
-                    onPress={btnHandler}
-                    hitSlop={{ top: 500, bottom: 700, left: 100, right: 100 }}
-                    style={[styles.btn]}
-                    type="contained"
-                    dark
-                  >
-                    {currentIndex === 0 ? null : (
-                      <Animated.Text
-                        style={[
-                          styles.text,
-                          { color: animating ? randomRGB() : randomRGB() },
-                        ]}
-                      >
-                        {text}
-                      </Animated.Text>
-                    )}
-                  </TouchableOpacity>
-                </View>
-              )}
-            </LinearGradient>
-          </View>
-        )}
+        <View
+          style={{ flex: 3, justifyContent: "center", alignItems: "stretch" }}
+        >
+          <LinearGradient
+            // Background Linear Gradient
+            colors={[randomRB(), "#e0e0e0"]}
+            style={{
+              position: "absolute",
+              left: 0,
+              right: 0,
+              top: 0,
+              height: "100%",
+            }}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 0, y: 1 }}
+          >
+            {bgColor && (
+              <View style={styles.gameBoard}>
+                {card && (
+                  <View style={styles.textContainer}>
+                    <TouchableOpacity
+                      mode="outlined"
+                      color="#fff"
+                      onPress={btnHandler}
+                      hitSlop={{ top: 700, bottom: 700, left: 100, right: 100 }}
+                      style={[styles.btn]}
+                      type="contained"
+                      dark
+                    >
+                      {currentIndex === 0 ? null : (
+                        <Animated.Text
+                          style={[
+                            styles.text,
+                            { color: animating ?tcolor() : tcolor() },
+                          ]}
+                        >
+                          {text}
+                        </Animated.Text>
+                      )}
+                    </TouchableOpacity>
+                  </View>
+                )}
+              </View>
+            )}
+          </LinearGradient>
+        </View>
+        <View style={{ flex: 1, justifyContent: "center" }}>
+          <ImageBackground
+            source={headerGif}
+            style={[styles.fixed, styles.gifContainer]}
+          />
+        </View>
       </Animated.View>
     );
   }
@@ -159,7 +183,7 @@ let randomRGB = () => {
   }
   let color =
     "'" + "rgba(" + red + "," + green + "," + blue + "," + "1.0" + ")" + "'";
-    
+
   return color;
 };
 
@@ -173,21 +197,53 @@ let randomRB = () => {
   return color;
 };
 
-let randomRG = () => {
-  let red = Math.floor(Math.random() * 255);
-  let green = Math.floor(Math.random() * 255);
-  let blue = Math.floor(Math.random() * 255);
-  let color =
-    "'" + "rgba(" + red + "," + green + "," + blue + "," + "1.0" + ")" + "'";
-
-  return color;
+const tcolor = () => {
+  
+  let textColor = [
+    "#00ff44",
+    "#00ffdd",
+    "#00d0ff",
+    "#0055ff",
+    "#1100ff",
+    "#8000ff",
+    "#bf00ff",
+    "#ff00e6",
+    "#ff0090",
+    "#ff0062",
+    "#ff0000",
+    "#ff6600",
+    "#ff9900",
+    "#ffbf00",
+    "#fff700",
+    "#ddff00",
+    "#8cff00",
+    "#5eff00",
+    "#00fff2",
+    "#00b7ff",
+    "#ff00c8",
+    "#ff009d",
+    "#ff007b",
+    "#ff0062",
+    "#ff5900",
+    "#ff6f00",
+    "#00ffa6",
+    "#00ffcc",
+    "#00ffff",
+  ];
+  const safeColor = textColor[Math.floor(Math.random() * textColor.length)];
+  return safeColor;
 };
+
 const styles = StyleSheet.create({
-  container: { flex: 1, overflow: "hidden" },
+  container: {
+    flex: 1,
+    overflow: "hidden",
+    flexDirection: "column",
+  },
   textContainer: {
-    height: "65%",
+    height: "75%",
     width: "75%",
-    backgroundColor: "rgba(255, 255, 255, 0.4)",
+
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 60,
@@ -206,11 +262,20 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   imageBackground: {
-    transform: [{ rotate: "90deg" }],
-    width: height,
-    height: width,
+    width: width,
+    height: "85%",
     alignItems: "center",
     justifyContent: "center",
+  },
+  fixed: {
+    position: "absolute",
+    bottom: 0,
+  },
+  gifContainer: {
+    width: Dimensions.get("window").width, //for full screen
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
   },
   gameBoard: {
     flex: 1,

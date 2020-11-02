@@ -49,6 +49,7 @@ class AddPlayers extends Component {
         springDamping: 3.4,
       },
     };
+    this.setState({ drinkWarning: false });
     setTimeout(() => {
       LayoutAnimation.configureNext(CustomAnimation);
       this.setState({ title: true });
@@ -111,7 +112,7 @@ class AddPlayers extends Component {
   };
 
   componentWillUnmount() {
-    this.state.drinkWarning = false
+    this.setState({ drinkWarning: false });
   }
 
   render() {
@@ -300,16 +301,14 @@ class AddPlayers extends Component {
 }
 
 const styles = StyleSheet.create({
-  main: {
-    width: Dimensions.get("window").width, //for full screen
-    height: Dimensions.get("window").height, //for full screen
-  },
   container: {
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#e0e0e0",
+    width: Dimensions.get("window").width, //for full screen
+    height: Dimensions.get("window").height, //for full screen
   },
   head: {
     flex: 1,

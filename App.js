@@ -9,7 +9,7 @@ import * as Font from "expo-font";
 import theme from "./src/config/theme";
 import * as SplashScreen from "expo-splash-screen";
 
-//LogBox.ignoreAllLogs();
+LogBox.ignoreAllLogs();
 
 UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true);

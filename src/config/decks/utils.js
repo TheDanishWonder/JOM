@@ -10,9 +10,25 @@ export function getRandomPlayer (players) {
 }
 
 export function getRandomSip () {
+  const randomSips = Math.floor(Math.random() * (MAX_SIP - MIN_SIP + 1)) + MIN_SIP
+  const number = "" + randomSips + "";
+  if(randomSips < 2) {
+    return number + " sip";
+  } else {
+    return number + " sips";
+  }
+}
+
+export function getRandomNumb () {
   return Math.floor(Math.random() * (MAX_SIP - MIN_SIP + 1)) + MIN_SIP
 }
 
 export function getLowSip () {
-  return Math.floor(Math.random() * (MAX_LOW_SIP - MIN_LOW_SIP + 1)) + MIN_LOW_SIP
+  const randomSips = Math.floor(Math.random() * (MAX_LOW_SIP - MIN_LOW_SIP + 1)) + MIN_LOW_SIP
+  const number = "" + randomSips + "";
+  if(randomSips < 2) {
+    return number + " sip";
+  } else {
+    return number + " sips";
+  }
 }

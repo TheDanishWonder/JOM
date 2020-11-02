@@ -8,10 +8,10 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "drinkingapp",
-    "primaryColor": "#ffb677",
-    "icon": "src/images/splash.png",
+    "primaryColor": "#00f7ff",
+    "icon": "src/images/logo_512x512_ios.png",
     "splash": {
-      "image": "src/images/splash.png",
+      "image": "src/images/splash_logo_517x517.png",
       "resizeMode": "contain",
       "backgroundColor": "#fff"
     },
@@ -21,13 +21,13 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.junkyartroom.smashed",
+      "bundleIdentifier": "com.idupont.smashed",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.junkyartroom.smashed",
-      "versionCode": 1,
-      "icon": "src/images/logo.png",
+      "package": "com.idupont.smashed",
+      "versionCode": 106,
+      "icon": "src/images/logo_512x512.png",
       "permissions": []
     }
   }
