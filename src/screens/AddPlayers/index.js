@@ -165,7 +165,7 @@ class AddPlayers extends Component {
                 width: 400,
               }}
             >
-              The last drinking app you will ever need
+              The last party app you will ever need
             </Text>
           )}
         </View>
@@ -231,7 +231,7 @@ class AddPlayers extends Component {
                   orientation="center"
                 ></Divider>
                 <Text style={styles.dialogUnderTitle}>
-                  Please remember to drink responsibly and look out for your
+                  Please remember to party responsibly and look out for your
                   friends.
                 </Text>
                 <Divider
