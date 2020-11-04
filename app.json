@@ -22,11 +22,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.idupont.smashed",
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.0.1"
     },
     "android": {
       "package": "com.idupont.smashed",
-      "versionCode": 106,
+      "versionCode": 107,
       "icon": "src/images/logo_512x512.png",
       "permissions": []
     }
