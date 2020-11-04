@@ -3,7 +3,7 @@ import { getRandomPlayer, getRandomSip } from './utils'
 
 export default {
   icon: 'glass-cocktail',
-  description: 'Spill the tea or take a shot',
+  description: 'Do you dare tell the truth?',
   cards: [
     (players) => {
     const player = getRandomPlayer(players) 
