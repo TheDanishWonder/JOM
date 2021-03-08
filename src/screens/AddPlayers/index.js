@@ -18,7 +18,7 @@ import {
   Button,
   Colors,
 } from "react-native-paper";
-import rotatingDrinks from "../../../assets/beerLoad.gif";
+import rotatingDrinks from "../../../assets/party.gif";
 import logo from "../../../assets/logo_675x675.png";
 import Dialog, {
   DialogContent,
@@ -122,7 +122,7 @@ class AddPlayers extends Component {
       <View style={styles.container}>
         <LinearGradient
           // Background Linear Gradient
-          colors={["#00f7ff", "#e0e0e0"]}
+          colors={["#00f7ff", "#79a292"]}
           style={{
             position: "absolute",
             left: 0,
@@ -148,7 +148,7 @@ class AddPlayers extends Component {
                 width: 400,
               }}
             >
-              Smashed
+              JOM
             </Text>
           )}
         </View>
@@ -165,7 +165,7 @@ class AddPlayers extends Component {
                 width: 400,
               }}
             >
-              The last party app you will ever need
+              "Just One More"
             </Text>
           )}
         </View>
@@ -231,8 +231,8 @@ class AddPlayers extends Component {
                   orientation="center"
                 ></Divider>
                 <Text style={styles.dialogUnderTitle}>
-                  Please remember to party responsibly and look out for your
-                  friends.
+                  This is JOM! In the game of JOM it is all about not getting
+                  any JOM's. 1 JOM is equals to 1 point.
                 </Text>
                 <Divider
                   color={"#00f7ff"}
@@ -240,8 +240,8 @@ class AddPlayers extends Component {
                   orientation="center"
                 ></Divider>
                 <Text style={styles.dialogPolicy}>
-                  By continuing, you agree to Smashed app-usage policy, for
-                  further information please click
+                  By continuing, you agree to JOM app-usage policy, for further
+                  information please click
                   <IconButton
                     icon="help-circle-outline"
                     color={Colors.black}
@@ -250,6 +250,19 @@ class AddPlayers extends Component {
                   />
                   on the next page
                 </Text>
+                <Divider
+                  color={"#00f7ff"}
+                  color={"#00f7ff"}
+                  orientation="center"
+                ></Divider>
+                <Button
+                  style={{ marginTop: -10 }}
+                  onPress={() => {
+                    this.setState({ drinkWarning: false });
+                  }}
+                >
+                  Continue
+                </Button>
                 <Divider
                   color={"#00f7ff"}
                   color={"#00f7ff"}
@@ -389,13 +402,14 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width, //for full screen
   },
   dialogContainer: {
-    height: "110%",
+    height: "200%",
     width: "100%",
     alignItems: "center",
     paddingTop: 10,
+    paddingBottom: 10,
   },
   dialogTitle: {
-    fontSize: 30,
+    fontSize: 25,
     alignItems: "center",
   },
   dialogUnderTitle: {

@@ -13,7 +13,7 @@ import {
 import activeDeck from "../../containers/active-deck";
 import players from "../../containers/players";
 import { LinearGradient } from "expo-linear-gradient";
-import headerGif from "../../../assets/beerLoad.gif";
+import headerGif from "../../../assets/party.gif";
 
 const height = Dimensions.get("window").height; //for full screen
 const width = Dimensions.get("window").width; //for full screen
@@ -116,7 +116,7 @@ class GameDeck extends Component {
         >
           <LinearGradient
             // Background Linear Gradient
-            colors={[randomRB(), "#e0e0e0"]}
+            colors={[randomRB(), "#79a292"]}
             style={{
               position: "absolute",
               left: 0,

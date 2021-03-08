@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "smashed",
-    "description": "Smashed is going to be the last drinking game app, you will ever download. It got all the traditional drinking games, and +150 cards per deck, so you wont ever run out of fun games to fire up the party.",
+    "description": "Smashed is going to be the last party app, you will ever download. It got all the traditional drinking games, and +150 cards per deck, so you wont ever run out of fun games to fire up the party.",
     "slug": "smashed",
     "privacy": "public",
     "platforms": ["ios", "android"],
@@ -26,7 +26,7 @@
     },
     "android": {
       "package": "com.idupont.smashed",
-      "versionCode": 107,
+      "versionCode": 108,
       "icon": "src/images/logo_512x512.png",
       "permissions": []
     }

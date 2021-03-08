@@ -12,7 +12,7 @@ import {
   Linking,
 } from "react-native";
 import { Appbar, List, Menu, IconButton, Colors } from "react-native-paper";
-import headerGif from "../../../assets/beerLoad.gif";
+import headerGif from "../../../assets/party.gif";
 import decks from "../../config/decks/index";
 import activeDeck from "../../containers/active-deck";
 
@@ -81,7 +81,7 @@ class ChooseGame extends React.Component {
       >
         <LinearGradient
           // Background Linear Gradient
-          colors={["#00f7ff", "#e0e0e0"]}
+          colors={["#00f7ff", "#79a292"]}
           style={{
             position: "absolute",
             left: 0,

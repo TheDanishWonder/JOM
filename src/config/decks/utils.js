@@ -13,9 +13,9 @@ export function getRandomSip () {
   const randomSips = Math.floor(Math.random() * (MAX_SIP - MIN_SIP + 1)) + MIN_SIP
   const number = "" + randomSips + "";
   if(randomSips < 2) {
-    return number + " sip";
+    return number + " JOM";
   } else {
-    return number + " sips";
+    return number + " JOM's";
   }
 }
 
@@ -27,8 +27,8 @@ export function getLowSip () {
   const randomSips = Math.floor(Math.random() * (MAX_LOW_SIP - MIN_LOW_SIP + 1)) + MIN_LOW_SIP
   const number = "" + randomSips + "";
   if(randomSips < 2) {
-    return number + " sip";
+    return number + " JOM";
   } else {
-    return number + " sips";
+    return number + " JOM's";
   }
 }
