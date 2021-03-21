@@ -1,22 +1,18 @@
 import { getRandomPlayer, getRandomSip, getRandomNumb } from './utils'
 
 const generalCards = [
-  () => `Get Smashed! Anyone drinking with their right hand must take ${getRandomSip()} from now on.`,
+
   (players) => {
     const player = getRandomPlayer(players)
-    return `${player} pick a mate. Everytime you drink, so does the other person.`
+    return `${player} Queue the next ${getRandomNumb()} songs.`
   },
   (players) => {
     const player = getRandomPlayer(players)
-    return `${player} Queue the next ${getRandomNumb} songs.`
+    return `${player} Queue the next ${getRandomNumb()} songs.`
   },
   (players) => {
     const player = getRandomPlayer(players)
-    return `${player} Queue the next ${getRandomNumb} songs.`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} Queue the next ${getRandomNumb} songs.`
+    return `${player} Queue the next ${getRandomNumb()} songs.`
   },
   (players) => {
     const player = getRandomPlayer(players)
@@ -25,54 +21,6 @@ const generalCards = [
   (players) => {
     const player = getRandomPlayer(players)
     return `${player} Queue your favorite party song.`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} Give out ${getRandomSip()} .`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} Give out ${getRandomSip()} .`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} Give out ${getRandomSip()} .`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} Give out ${getRandomSip()} .`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} Give out ${getRandomSip()} .`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} recieve ${getRandomSip()} .`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} recieve ${getRandomSip()} .`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} recieve ${getRandomSip()} .`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} recieve ${getRandomSip()} .`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} recieve ${getRandomSip()} .`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} pick a mate. Everytime you get JOM's, so does the other person.`
-  },
-  (players) => {
-    const player = getRandomPlayer(players)
-    return `${player} pick a mate. Everytime you get JOM's, so does the other person.`
   },
   (players) => {
     const player = getRandomPlayer(players)
@@ -96,19 +44,6 @@ const generalCards = [
     const player2 = getRandomPlayer(players.filter(current => current !== player1))
     return `${player1} your new name is ${player2} and visa versa. Anyone incorrectly using your old name recieve ${getRandomSip()} .`
   },
-  (players) => {
-    const player1 = getRandomPlayer(players)
-    const player2 = getRandomPlayer(players.filter(current => current !== player1))
-    return `${player1} every time ${player2} recieves a JOM you cheer them on and vise versa, for the next ${getRandomNumb()} rounds.`
-  },
-  (players) => {
-    const player1 = getRandomPlayer(players)
-    const player2 = getRandomPlayer(players.filter(current => current !== player1))
-    return `${player1} every time ${player2} recieves a JOM you cheer them on and vise versa, for the next ${getRandomNumb()} rounds.`
-  },
-  
-  () => `All the boys in the group, take ${getRandomSip()} .`,
-  () => `All the girls in the group, take ${getRandomSip()} .`,
   () => `Everybody recieves ${getRandomSip()} if your first name contains the letter "${getRandomString(1)}"`,
   () => `Everybody recieves ${getRandomSip()} if your last name contains the letter "${getRandomString(1)}"`,
   () => `Everybody recieves ${getRandomSip()} if your fathers name contains the letter "${getRandomString(1)}"`,

@@ -73,7 +73,7 @@ export default {
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player} show everyone how you normally dance, or add 10 JOM's to your score`;
+      return `${player} show everyone how you normally dance, or add ${getRandomSip()} to your score`;
     },
     (players) => {
       const player = getRandomPlayer(players);
@@ -85,15 +85,15 @@ export default {
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player} post a video on instagram story with @SmashedDrinkingGame showing some love`;
+      return `${player} post a video on instagram story with @TheRealQuizina showing some love`;
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player} go and follow SmashedDrinkingGame on Instagram.`;
+      return `${player} go and follow TheRealQuizina on Instagram.`;
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player}, as many people you can convince to go and follow SmashedDrinkingGame on Instagram, as many you can give out`;
+      return `${player}, as many people you can convince to go and follow TheRealQuizina on Instagram, as many you can give out`;
     },
     (players) => {
       const player = getRandomPlayer(players);
@@ -119,11 +119,11 @@ export default {
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player} post a picture of yourself in a silly pose on Instagram with the caption #SmashedDrinkingGame`;
+      return `${player} post a picture of yourself in a silly pose on Instagram with the caption #TheRealQuizina`;
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player} name everyone at the party, recieve a JOM for every wrong name you say`;
+      return `${player} name everyone at the party, recieve a Zina for every wrong name you say`;
     },
     (players) => {
       const player = getRandomPlayer(players);
@@ -139,10 +139,6 @@ export default {
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player} recieve a sip out of everyones drink, the player with the best drink gives out ${getRandomSip()}`;
-    },
-    (players) => {
-      const player = getRandomPlayer(players);
       return `${player} get up and twerk. recieve a sip for each player that is not impressed by your twerking-skills`;
     },
     (players) => {
@@ -155,7 +151,7 @@ export default {
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player} which player would you like to see breakdance? if they accept, add 10 JOM's to your score`;
+      return `${player} which player would you like to see breakdance? if they accept, add ${getRandomSip()} to your score`;
     },
     (players) => {
       const player = getRandomPlayer(players);
@@ -205,19 +201,7 @@ export default {
       const player = getRandomPlayer(players);
       return `${player} is now DJ and can skip this song and queue the next ${getRandomNumb()} songs`;
     },
-    (players) => {
-      const player = getRandomPlayer(players);
-      return `Tag, you're it! The person who is "it" touches a random player who drinks and is now "it" ${player}, you're "it".`;
-    },
-    (players) => {
-      const player = getRandomPlayer(players);
-      return `${player}, choose something you like, those who dont like it have to recieve ${getRandomSip()}. You recieve ${getRandomSip()} if nobody drinks`;
-    },
     // 50
-    (players) => {
-      const player = getRandomPlayer(players);
-      return `${player}, choose something you like, those who dont like it have to recieve ${getRandomSip()}. You recieve ${getRandomSip()} if nobody drinks`;
-    },
     (players) => {
       const player = getRandomPlayer(players);
       return `FINISH THE WORD.. Starting with ${player}, say a letter, the next person adds a letter, the person who finish the word recieves ${getRandomSip()}`;
@@ -264,19 +248,7 @@ export default {
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player} give out ${getRandomSip()} to a player who has less to drink than you... if you can't finish your drink (Can't be that much... CHUG! CHUG! CHUG!)`;
-    },
-    (players) => {
-      const player = getRandomPlayer(players);
       return `${player} choose between giving out ${getRandomSip()} to the shortest player, or 1 sip to everyone`;
-    },
-    (players) => {
-      const player = getRandomPlayer(players);
-      return `${player}, you just turned 76, hide your teeth for the next ${getRandomNumb()} rounds, drink if your fake teeth falls out`;
-    },
-    (players) => {
-      const player = getRandomPlayer(players);
-      return `${player}, recieve a sip out of your drink without using your arms or hands (The drinking gods believes in you)`;
     },
     (players) => {
       const player = getRandomPlayer(players);
@@ -309,10 +281,6 @@ export default {
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player} give out ${getRandomSip()} to a player who is more tan than you... if you can't finish your drink`;
-    },
-    (players) => {
-      const player = getRandomPlayer(players);
       return `${player}, in the name of love, give out ${getRandomSip()} to a player you like the most`;
     },
     (players) => {
@@ -338,10 +306,6 @@ export default {
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player}, drink as many as there are years between you and the youngest player at the table`;
-    },
-    (players) => {
-      const player = getRandomPlayer(players);
       return `${player}, what’s the most embarrasing thing you’ve done while drunk? Everyone cheers to embarrasing stories`;
     },
     (players) => {
@@ -354,28 +318,20 @@ export default {
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player}, what’s your favorite drink? recieve as many as there are letters in the first word`;
+      return `${player}, what’s your favorite drink? recieve as many Zina's as there are letters in the first word`;
     },
     (players) => {
       const player = getRandomPlayer(players);
       return `${player}, if you HAD to play matchmaker, which two players would make a good couple? Everyone cheers for the newly weds`;
     },
-    (players) => {
-      const player = getRandomPlayer(players);
-      return `${player}, do you have a hidden talent? If you do, have someone video it and post it to your story with the hashtag #smasheddrinkinggame, drink ${getRandomSip()} if you dont`;
-    },
-    (players) => {
-      const player = getRandomPlayer(players);
-      return `${player}, try to put your whole fist in your mouth, drink ${getRandomSip()} if you cant`;
-    },
     // 90
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player}, pole dance with an imaginary pole for the next ${getRandomNumb()} rounds, drink ${getRandomSip()} if you forget to dance`;
+      return `${player}, pole dance with an imaginary pole for the next ${getRandomNumb()} rounds, recieve ${getRandomSip()} if you forget to dance`;
     },
     (players) => {
       const player = getRandomPlayer(players);
-      return `${player}, if you can name ${getRandomNumb()} Justin Bieber songs, give out ${getRandomSip()} elsewhere drink them yourself`;
+      return `${player}, if you can name ${getRandomNumb()} Justin Bieber songs, give out ${getRandomSip()} elsewhere recieve them yourself`;
     },
     (players) => {
       const player = getRandomPlayer(players);
@@ -447,12 +403,10 @@ export default {
     () => `Everyone that got laid yesterday give ${getRandomSip()} out. ( ${safeSexJoke} )`,
     () => `recieve a sip for every piece of clothing you got on.`,
     () => `Everyone is now named the last person they kissed.`,
-    () => `Next one to finish their drink, decides who has to chug their drink.`,
     () => `If you got red on recieve ${getRandomSip()}.`,
     () => `If your name contains one of these letters "${getRandomString(1)}-${getRandomString(1)}-${getRandomString(1)}-${getRandomString(1)}-${getRandomString(1)}", recieve ${getRandomSip()}.`,
     () => `If you have shoes on, recieve ${getRandomSip()}.`,
     () => `If you ever got pulled over by the police, recieve ${getRandomSip()} per time you got pulled over, chug saves.`,
-    () => `last player that has touch their drink, recieve ${getRandomSip()}. (Everyone else drinks too since your drink is already in your hand CHEERS!) )`,
     () => `If you own a dog, give ${getRandomSip()}, if you own a cat, recieve ${getRandomSip()} out.`,
     () => `If you got red on recieve ${getRandomSip()}.`,
     () => `If you have ever been on TV or the radio, recieve ${getRandomSip()}.`,
@@ -469,12 +423,10 @@ export default {
     () => `The person who looks the fittest, recieve ${getRandomSip()}. (damn show off! ;) )`,
     () => `Whoever suggested to play smashed, give out ${getRandomSip()}. (Excellent idea!)`,
     () => `If you have friends who prefer to call instead of text, give out ${getRandomSip()}. (other players must know these people)`,
-    () => `BOTTOMS UP!!! If you have an ${getRandomString(1)} in your first name, down your drink`,
     () => `If you have an ${getRandomString(1)} in your last name, give out ${getRandomSip()}`,
     () => `The last person who went to the bathroom, recieve ${getRandomSip()}.`,
     () => `The first person to find any white object, give out ${getRandomSip()}. (Can't be a shirt.. dont be boring)`,
     () => `recieve ${getRandomSip()} if, in a restaurant, someone from your table has complained about their food`,
-    () => `Drink as many as there are f*ckable people in the room ( ${safeSexJoke} )`,
     () => `The last player that have celebrated their birthday, give out ${getRandomSip()}. (Happy belated birthday)`,
     () => `Anyone who has given to charity, give out ${getRandomSip()}.`,
     () => `recieve ${getRandomSip()} if you have ever thought that there was a way to find out who peed in the pool`,

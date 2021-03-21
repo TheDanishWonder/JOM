@@ -68,6 +68,7 @@ class ChooseGame extends React.Component {
 
   componentWillUnmount() {
     this.state.visible = false;
+    this.state.items = false;
   }
 
   render() {
@@ -155,7 +156,7 @@ class ChooseGame extends React.Component {
                 />
                 <ScrollView>
                   <View style={styles.dialogContainer}>
-                    <Text style={styles.dialogTitle}>Smashed</Text>
+                    <Text style={styles.dialogTitle}>Quizina</Text>
                     <Text style={styles.dialogUnderTitle}>How to play</Text>
                     <Divider
                       color={"#00f7ff"}
@@ -164,17 +165,26 @@ class ChooseGame extends React.Component {
                     ></Divider>
                     <Text style={styles.dialogGenre}>General Game Rules</Text>
                     <Text style={styles.dialogRules}>
-                      Follow the instructions on the cards, and remember to
-                      drink responsibly
+                      Follow the instructions on the cards, and remember the person with the least amount of points when the game ends wins
                     </Text>
                     <Divider
                       color={"#00f7ff"}
                       color={"#00f7ff"}
                       orientation="center"
                     ></Divider>
-                    <Text style={styles.dialogGenre}>Truth or Drink</Text>
+                    <Text style={styles.dialogGenre}>Spill the Tea</Text>
                     <Text style={styles.dialogRules}>
-                      Tell the truth or take a shot.
+                      Tell the truth or recieve a point.
+                    </Text>
+                    <Divider
+                      color={"#00f7ff"}
+                      color={"#00f7ff"}
+                      orientation="center"
+                    ></Divider>
+                    <Text style={styles.dialogGenre}>Disney Dream</Text>
+                    <Text style={styles.dialogRules}>
+                      Test your Disney knowledge.
+                      One player reads the question out loud without showing the phone, all others can answer first one to answer wins.
                     </Text>
                     <Divider
                       color={"#00f7ff"}
@@ -187,8 +197,8 @@ class ChooseGame extends React.Component {
                       and thought about the question, a player counts down from
                       3 and each player either raise their hand for the first
                       answer or keep their hand down for the second answer, the
-                      answer with fewest supporters takes a sip of your drink,
-                      if its a tie everybody drinks.
+                      answer with fewest supporters recieves a point,
+                      if its a tie everybody recieves a point.
                     </Text>
                     <Divider
                       color={"#00f7ff"}
@@ -198,13 +208,6 @@ class ChooseGame extends React.Component {
                     <Text style={(styles.dialogUnderTitle, styles.credit)}>
                       Credit
                     </Text>
-                    <Divider
-                      color={"#00f7ff"}
-                      color={"#00f7ff"}
-                      orientation="center"
-                    ></Divider>
-                    <Text style={styles.dialogGenre}>Gif Design</Text>
-                    <Text style={styles.dialogRules}>Jon Ander Pazos</Text>
                     <Divider
                       color={"#00f7ff"}
                       color={"#00f7ff"}
@@ -230,7 +233,7 @@ class ChooseGame extends React.Component {
                     <Text style={styles.policyField}>App Usage</Text>
                     <Text style={styles.policyText}>
                       The user of the app agree to be fully responsible for any
-                      consequences that may result from the use of Smashed.
+                      consequences that may result from the use of Quizina.
                     </Text>
                     <Divider
                       color={"#00f7ff"}
@@ -239,7 +242,7 @@ class ChooseGame extends React.Component {
                     ></Divider>
                     <Text style={styles.policyField}>Privacy Policy</Text>
                     <Text style={styles.policyText}>
-                      Nicklas Dupont built the Smashed app as a Commercial app.
+                      Nicklas Dupont built the Quizina app as a Commercial app.
                       This SERVICE is provided by Nicklas Dupont and is intended
                       for use as is. This page is used to inform visitors
                       regarding my policies with the collection, use, and

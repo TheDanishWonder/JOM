@@ -17,7 +17,7 @@ import NhieDeck from './never-have-i-ever'
 export default {
   //'Fitness freak': FitnessDeck,
   //'Hackers delight': HackersDeck,
-  'JOM Nation': GigglesDeck,
+  'Quizina Nation': GigglesDeck,
   //'Movie Fanatics': MovieDeck,
   //'Sports Idiots': SportDeck,
   //'Girls Night': GirlsDeck,

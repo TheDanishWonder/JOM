@@ -14,9 +14,13 @@ import activeDeck from "../../containers/active-deck";
 import players from "../../containers/players";
 import { LinearGradient } from "expo-linear-gradient";
 import headerGif from "../../../assets/party.gif";
+import { AntDesign } from "@expo/vector-icons";
 
 const height = Dimensions.get("window").height; //for full screen
 const width = Dimensions.get("window").width; //for full screen
+const getAdjustedFontSize = (size) => {
+  return parseInt(size) * width * (1.8 - 0.002 * width) / 450;
+}
 
 class GameDeck extends Component {
   state = {
@@ -129,13 +133,21 @@ class GameDeck extends Component {
           >
             {bgColor && (
               <View style={styles.gameBoard}>
+                <View
+                style={styles.goBack}
+                >
+                  <TouchableOpacity onPress={this.handleBack}>
+                    <AntDesign name="leftcircleo" size={35} color="white" />
+                  </TouchableOpacity>
+                </View>
+
                 {card && (
                   <View style={styles.textContainer}>
                     <TouchableOpacity
                       mode="outlined"
                       color="#fff"
                       onPress={btnHandler}
-                      hitSlop={{ top: 700, bottom: 700, left: 100, right: 100 }}
+                      hitSlop={{ top: 130, bottom: 700, left: 100, right: 100 }}
                       style={[styles.btn]}
                       type="contained"
                       dark
@@ -144,7 +156,7 @@ class GameDeck extends Component {
                         <Animated.Text
                           style={[
                             styles.text,
-                            { color: animating ?tcolor() : tcolor() },
+                            { color: animating ? tcolor() : tcolor() },
                           ]}
                         >
                           {text}
@@ -198,7 +210,6 @@ let randomRB = () => {
 };
 
 const tcolor = () => {
-  
   let textColor = [
     "#00ff44",
     "#00ffdd",
@@ -243,7 +254,7 @@ const styles = StyleSheet.create({
   textContainer: {
     height: "75%",
     width: "75%",
-
+    backgroundColor: "rgba(255,255,255,0.1)",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 60,
@@ -251,7 +262,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "GloriaHallelujah",
     color: "#f5c144",
-    fontSize: 25,
+    fontSize: getAdjustedFontSize(24),
     margin: 10,
     textAlign: "center",
     textShadowColor: "rgba(0,0,0,1.0)",
@@ -279,10 +290,13 @@ const styles = StyleSheet.create({
   },
   gameBoard: {
     flex: 1,
-    flexDirection: "row",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
   },
+  goBack: {
+    padding: 20
+  }
 });
 
 export default GameDeck;

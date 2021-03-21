@@ -1,17 +1,17 @@
 {
   "expo": {
-    "name": "smashed",
-    "description": "Smashed is going to be the last party app, you will ever download. It got all the traditional drinking games, and +150 cards per deck, so you wont ever run out of fun games to fire up the party.",
-    "slug": "smashed",
+    "name": "quizina",
+    "description": "Quizina is hours of fun with lightning quizzes, challenges and nostalgic games",
+    "slug": "quizina",
     "privacy": "public",
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "drinkingapp",
+    "scheme": "quizapp",
     "primaryColor": "#00f7ff",
-    "icon": "src/images/logo_512x512_ios.png",
+    "icon": "src/images/quizina_logo.png",
     "splash": {
-      "image": "src/images/splash_logo_517x517.png",
+      "image": "src/images/quizina_splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#fff"
     },
@@ -21,13 +21,13 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.idupont.smashed",
-      "buildNumber": "1.0.1"
+      "bundleIdentifier": "com.idupont.quizina",
+      "buildNumber": "1.0.2"
     },
     "android": {
-      "package": "com.idupont.smashed",
-      "versionCode": 108,
-      "icon": "src/images/logo_512x512.png",
+      "package": "com.idupont.quizina",
+      "versionCode": 112,
+      "icon": "src/images/quizina_logo.png",
       "permissions": []
     }
   }

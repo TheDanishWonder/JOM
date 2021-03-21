@@ -49,7 +49,6 @@ class AddPlayers extends Component {
         springDamping: 3.4,
       },
     };
-    this.setState({ drinkWarning: false });
     setTimeout(() => {
       LayoutAnimation.configureNext(CustomAnimation);
       this.setState({ title: true });
@@ -70,9 +69,6 @@ class AddPlayers extends Component {
       this.setState({ deck: true });
     }, 3400);
 
-    setTimeout(() => {
-      this.setState({ drinkWarning: true });
-    }, 4000);
   }
 
   handleAddPlayer = () => {
@@ -112,8 +108,12 @@ class AddPlayers extends Component {
   };
 
   componentWillUnmount() {
-    this.setState({ drinkWarning: false });
+    this.state.title = false;
+    this.state.underTitle = false;
+    this.state.visible = false;
+    this.state.deck = false;
   }
+
 
   render() {
     const { players, current, visible, title, underTitle, deck } = this.state;
@@ -148,7 +148,7 @@ class AddPlayers extends Component {
                 width: 400,
               }}
             >
-              JOM
+              Quizina
             </Text>
           )}
         </View>
@@ -165,7 +165,7 @@ class AddPlayers extends Component {
                 width: 400,
               }}
             >
-              "Just One More"
+              Challenge your friends 
             </Text>
           )}
         </View>
@@ -204,73 +204,6 @@ class AddPlayers extends Component {
               </View>
             </Fragment>
           )}
-          <Dialog
-            width={0.8}
-            height={0.4}
-            containerStyle={{ marginTop: 100 }}
-            onHardwareBackPress={() => {
-              true;
-            }}
-            overlayOpacity={0.5}
-            dialogAnimation={
-              new SlideAnimation({
-                slideFrom: "bottom",
-              })
-            }
-            visible={this.state.drinkWarning}
-            onTouchOutside={() => {
-              this.setState({ drinkWarning: false });
-            }}
-          >
-            <DialogContent>
-              <View style={styles.dialogContainer}>
-                <Text style={styles.dialogTitle}>Disclaimer</Text>
-                <Divider
-                  color={"#00f7ff"}
-                  color={"#00f7ff"}
-                  orientation="center"
-                ></Divider>
-                <Text style={styles.dialogUnderTitle}>
-                  This is JOM! In the game of JOM it is all about not getting
-                  any JOM's. 1 JOM is equals to 1 point.
-                </Text>
-                <Divider
-                  color={"#00f7ff"}
-                  color={"#00f7ff"}
-                  orientation="center"
-                ></Divider>
-                <Text style={styles.dialogPolicy}>
-                  By continuing, you agree to JOM app-usage policy, for further
-                  information please click
-                  <IconButton
-                    icon="help-circle-outline"
-                    color={Colors.black}
-                    size={20}
-                    style={{ marginTop: -15 }}
-                  />
-                  on the next page
-                </Text>
-                <Divider
-                  color={"#00f7ff"}
-                  color={"#00f7ff"}
-                  orientation="center"
-                ></Divider>
-                <Button
-                  style={{ marginTop: -10 }}
-                  onPress={() => {
-                    this.setState({ drinkWarning: false });
-                  }}
-                >
-                  Continue
-                </Button>
-                <Divider
-                  color={"#00f7ff"}
-                  color={"#00f7ff"}
-                  orientation="center"
-                ></Divider>
-              </View>
-            </DialogContent>
-          </Dialog>
         </View>
         <View style={styles.button}>
           {deck && (
